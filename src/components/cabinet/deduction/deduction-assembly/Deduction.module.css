@@ -1,0 +1,46 @@
+.deduction > h2 {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.wrapper {
+    margin-top: 30px;
+}
+
+.items > div {
+    margin-top: 50px;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+}
+
+.items > div > h3 {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.items > div > ul {
+    margin-top: 30px;
+    list-style: none;
+    list-style-image: url('/imgs/cabinet/deduction/mark.png');
+}
+
+.items > div > ul > li {
+    text-align: justify;
+    margin: 10px 0;
+    padding-left: 10px;
+}
+
+.items > div > p {
+    margin-top: 40px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.docs {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}

@@ -1,0 +1,18 @@
+.button {
+    background: #193554;
+    padding: 15px 20px;
+    transition: all .2s;
+    box-shadow: 0px 2px 18px rgba(41, 41, 41, 0.1);
+    border-radius: 40px;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    transition: all .2s;
+    transform: scale(1.02);
+}

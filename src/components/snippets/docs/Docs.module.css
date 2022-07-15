@@ -1,0 +1,25 @@
+.docs {
+    margin: 10px 0;
+}
+
+.docs * {
+    cursor: pointer;
+}
+
+.docs > a {
+    cursor: pointer;
+    color: #A89060;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+
+.docs > a > img {
+    width: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}

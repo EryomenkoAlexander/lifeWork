@@ -1,0 +1,70 @@
+.opening {
+    margin-top: 50px;
+}
+
+.opening > h2 {
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.wrapper > * {
+    color: #0D1C41;
+}
+
+.table {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.table > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.table > div > h3 {
+    font-weight: 500;
+}
+
+.item {
+    border-top: 2px solid #939CA6;
+}
+
+.position {
+    width: 40%;
+}
+
+.freePlaces {
+    text-align: right;
+    width: 30%;
+}
+
+.item > .freePlaces {
+    color: #57A24B;
+    font-weight: 500;
+}
+
+.salary {
+    text-align: right;
+    width: 30%;
+}
+
+.remark {
+    color: #535D69;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    width: 85%;
+    margin-top: 20px;
+}

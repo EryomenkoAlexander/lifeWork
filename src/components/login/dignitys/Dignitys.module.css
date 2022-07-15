@@ -1,0 +1,39 @@
+.dignitys {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dignitysTitle {
+    height: 110px;
+    background: url(/imgs/login/five.svg) no-repeat center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dignitysTitle > span {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 1px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.items > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.items > div > span {
+    margin-left: 40px;
+    font-weight: 500;
+}

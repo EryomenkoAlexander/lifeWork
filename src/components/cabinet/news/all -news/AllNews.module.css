@@ -1,0 +1,28 @@
+.allNews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.allNews > h2 {
+    font-weight: 500;
+    font-size: 34px;
+    width: 100%;
+    text-align: left;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.wrapper > h3 {
+    color: #939CA6;
+    font-weight: 400;
+    font-size: 24px;
+}

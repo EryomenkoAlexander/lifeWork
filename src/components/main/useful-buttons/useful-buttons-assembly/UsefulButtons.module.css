@@ -1,0 +1,20 @@
+.usefulButtons {
+    padding: 50px 0 100px;
+}
+
+.usefulButtons h2 {
+    font-weight: 400;
+    font-size: 48px;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.wrapper > button {
+    margin: 0 16px;
+}

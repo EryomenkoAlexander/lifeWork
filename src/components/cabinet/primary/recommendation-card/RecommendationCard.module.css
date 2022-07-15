@@ -1,0 +1,82 @@
+.recommendationCard {
+    box-shadow: 0px 2px 18px rgba(41, 41, 41, 0.1);
+    border-radius: 10px;
+}
+
+.recommendationCard * {
+    color: #0D1C41;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #DEDEDE;
+    padding: 20px;
+}
+
+.title > h4 {
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.content {
+    padding: 0 30px 30px;
+}
+
+.content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.items > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0px 2px 18px rgba(41, 41, 41, 0.1);
+    border-radius: 6px;
+    margin: 10px 0;
+    width: 100%;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.items > div:hover {
+    transition: all .2s;
+    transform: scale(1.05);
+}
+
+.items > div > div > img {
+    transition: all .2s;
+    margin-right: 5px;
+}
+
+.items > div:hover > div > img {
+    transition: all .2s;
+    transform: scale(1.2);
+    margin-right: -5px;
+}
+
+.items > div * {
+    cursor: pointer;
+}
+
+.items > div h4 {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.items > div h3 {
+    font-weight: 600;
+}

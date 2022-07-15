@@ -1,0 +1,12 @@
+.wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.ourTeam > h2 {
+    font-size: 34px;
+    font-weight: 500;
+}

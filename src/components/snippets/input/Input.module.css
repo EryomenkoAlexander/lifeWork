@@ -1,0 +1,89 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+
+.wrapper > h4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.wrapper > div {
+    width: 100%;
+}
+
+.wrapper > div > input {
+    padding: 15px 15px 15px 20px;
+    width: 100%;
+    box-shadow: 2px 0px 12px rgba(20, 29, 61, 0.12);
+    border-radius: 10px;
+    border: none;
+    margin: 5px 0;
+    outline: none;
+    transition: all .2s;
+    font-size: 16px;
+    position: relative;
+}
+
+.wrapper > div > img {
+    position: absolute;
+    top: 42.5%;
+    right: 20px;
+    z-index: 100;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.wrapper > div > img:hover {
+    transition: all .2s;
+    transform: scale(1.1);
+}
+
+.wrapper > div > input:hover {
+    transition: all .2s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.wrapper > div > input:disabled {
+    background: #E9ECEF;
+}
+
+.wrapper > div > input:disabled:hover {
+    box-shadow: 2px 0px 12px rgba(20, 29, 61, 0.12);
+}
+
+.wrapper > div > input:focus {
+    transition: all .2s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.wrapper > div > input::placeholder {
+    font-size: 16px;
+}
+
+.wrapper > p {
+    font-size: 14px;
+    color: #4A607A;
+}
+
+.wrapper.error::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #DC0000;
+    border-radius: 50%;
+    position: absolute;
+    left: -5%;
+    top: 47.5%;
+}
+
+.error > span {
+    color: #DC0000;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+    line-height: 18px;
+}

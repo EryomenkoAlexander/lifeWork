@@ -1,0 +1,21 @@
+.typesInsurance {
+    padding: 50px 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h2 {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.infoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
