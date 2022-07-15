@@ -1,0 +1,49 @@
+.info {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.wrapper label {
+    margin: 20px 0 0;
+}
+
+.wrapper > form {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.wrapper > form > div {
+    width: 40%;
+}
+
+.wrapper > form > div > button {
+    margin-top: 50px;
+}
+
+.remark {
+    color: #6C757D;
+    font-size: 14px;
+    position: relative;
+}
+
+.remark::before {
+    content: '*';
+    color: #6C757D;
+    font-size: 16px;
+    position: absolute;
+    left: -15px;
+    top: 10%;
+}
+
+.step_1 > button {
+    margin: 20px 0 30px;
+}
+
+.step_3 {
+    position: relative;
+}
+
+.step_4 > button {
+    margin: 20px 0 0;
+}

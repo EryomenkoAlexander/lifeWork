@@ -1,0 +1,39 @@
+.card {
+    transition: all 0.5s;
+    width: 32%;
+    box-shadow: 0px 2px 18px rgba(41, 41, 41, 0.1);
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+.card:hover {
+    transition: all 0.5s;
+    transform: scale(1.04);
+    border: 1px solid #A89060;
+    box-shadow: -2px 7px 18px -5px rgba(48, 45, 38, 0.3);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.wrapper h2 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.wrapper > img {
+    margin: 80px 0 50px;
+}
+
+.wrapper div button {
+    margin: 15px 0;
+    width: 100%;
+    padding: 15px 48px;
+}

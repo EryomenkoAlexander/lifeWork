@@ -1,0 +1,8 @@
+.programs * {
+    color: #0D1C41;
+}
+
+.programs > h2 {
+    font-size: 34px;
+    font-weight: 500;
+}

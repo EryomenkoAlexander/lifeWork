@@ -1,0 +1,77 @@
+.message {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.message > * {
+    color: #0D1C41;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.wrapper > img {
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.wrapper > img:hover {
+    transition: all .2s;
+    transform: scale(1.1);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.content h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.subInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid rgba(147, 156, 166, 0.5);
+    padding-top: 10px;
+}
+
+.from {
+    font-size: 12px;
+    color: #535D69;
+}
+
+.from > span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0D1C41;
+    margin-left: 10px;
+}
+
+.fullDate {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    color: #535D69;
+    font-weight: 500;
+    font-size: 14px;
+}

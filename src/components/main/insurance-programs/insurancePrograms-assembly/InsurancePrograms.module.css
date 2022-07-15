@@ -1,0 +1,16 @@
+.insurancePrograms {
+    padding: 50px 0;
+}
+
+.insurancePrograms h2 {
+    font-size: 48px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding-top: 50px;
+}

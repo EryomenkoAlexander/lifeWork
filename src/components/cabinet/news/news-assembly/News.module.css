@@ -1,0 +1,15 @@
+.news > * {
+    color: #0D1C41;
+}
+
+.news > h2 {
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}

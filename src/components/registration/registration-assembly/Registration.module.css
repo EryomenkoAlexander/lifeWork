@@ -1,0 +1,16 @@
+.registration {
+    padding: 50px 0;
+}
+
+.registration h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,27 @@
+.cabinet {
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabinet div:first-child {
+    margin-right: 15px;
+}
+
+.cabinet:hover {
+    transition: all 0.2s;
+    color: #A89060;
+}
+
+.cabinet:hover .img {
+    transition: all 0.2s;
+    background: url(/imgs/header/cabinet-active.svg) no-repeat center / cover;
+}
+
+.img {
+    transition: all 0.2s;
+    width: 34px;
+    height: 34px;
+    background: url(/imgs/header/cabinet.svg) no-repeat center / cover;
+}

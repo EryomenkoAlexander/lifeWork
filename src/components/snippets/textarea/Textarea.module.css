@@ -1,0 +1,65 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.wrapper > h4 {
+    font-size: 16px;
+    font-weight: 600;
+    font-weight: 500;
+}
+
+.wrapper > div {
+    width: 100%;
+}
+
+.wrapper > div > textarea {
+    padding: 15px 15px 15px 20px;
+    width: 100%;
+    box-shadow: 2px 0px 12px rgba(20, 29, 61, 0.12);
+    border-radius: 10px;
+    border: none;
+    margin: 5px 0;
+    outline: none;
+    transition: all .2s;
+    font-size: 16px;
+    position: relative;
+    resize: none;
+}
+
+.wrapper > div > textarea:hover {
+    transition: all .2s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.wrapper > div > textarea:focus {
+    transition: all .2s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.wrapper > div > textarea::placeholder {
+    font-size: 16px;
+}
+
+.wrapper.error::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #DC0000;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 47.5%;
+}
+
+.error > span {
+    color: #DC0000;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+    line-height: 18px;
+}

@@ -1,0 +1,88 @@
+.statusPolicyCard {
+    box-shadow: 0px 2px 18px rgba(41, 41, 41, 0.1);
+    border-radius: 10px;
+}
+
+.statusPolicyCard * {
+    color: #0D1C41;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #57A34B;
+    padding: 20px;
+}
+
+.title > h4 {
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.content {
+    padding: 30px;
+}
+
+.content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.header > h4 {
+    font-weight: 500;
+}
+
+.header > h3 {
+    font-weight: 600;
+}
+
+.header > div {
+    color: #8A939B;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.header > div > span {
+    margin-left: 5px;
+    color: #8A939B;
+}
+
+.days {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('/imgs/cabinet/primary/ellipse.svg') no-repeat center / cover;
+    width: 150px;
+    height: 150px;
+    margin: 30px auto;
+}
+
+.days h4 {
+    font-weight: 400;
+}
+
+.days > div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.days > div > h3 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.days > div > h4 {
+    margin-left: 5px;
+}
