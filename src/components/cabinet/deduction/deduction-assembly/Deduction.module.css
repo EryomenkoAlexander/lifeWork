@@ -36,11 +36,3 @@
     text-align: justify;
     line-height: 1.4;
 }
-
-.docs {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-}
