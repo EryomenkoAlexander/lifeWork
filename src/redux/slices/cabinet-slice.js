@@ -557,7 +557,7 @@ let initialState = {
     ],
   },
   archives: {
-    title: "Документы",
+    title: "Архив",
     docs: [
       {
         id: Math.random(),
@@ -588,66 +588,64 @@ let initialState = {
             link:
               "https://prolife.ru/static/upload/statements/1_Zayvlenie_na_poluchenie_strahovoy_viplati.pdf",
           },
+        ],
+      },
+      {
+        id: Math.random(),
+        topic: "Лицензии",
+        items: [
           {
             id: Math.random(),
-            text: "",
-            link: "",
+            text: "Добровольное личное страхование",
+            link: "https://prolife.ru/static/upload/iblock/9be/SL.pdf",
+          },
+          {
+            id: Math.random(),
+            text: "Добровольное страхование жизни",
+            link: "https://prolife.ru/static/upload/iblock/cfe/SZh.pdf",
           },
         ],
       },
       {
         id: Math.random(),
-        topic: 'Лицензии',
+        topic: "Банковские реквизиты",
         items: [
           {
             id: Math.random(),
-            text: 'Добровольное личное страхование',
-            link: 'https://prolife.ru/static/upload/iblock/9be/SL.pdf',
-          },
-          {
-            id: Math.random(),
-            text: 'Добровольное страхование жизни',
-            link: 'https://prolife.ru/static/upload/iblock/cfe/SZh.pdf'
-          }
-        ]
-      },
-      {
-        id: Math.random(),
-        topic: 'Банковские реквизиты',
-        items: [
-          {
-            id: Math.random(),
-            text: 'ПАО Сбербанк',
-            link: 'https://prolife.ru/static/upload/iblock/b21/rekvizity_sberbank.pdf'
+            text: "ПАО Сбербанк",
+            link:
+              "https://prolife.ru/static/upload/iblock/b21/rekvizity_sberbank.pdf",
           },
           {
             id: Math.random(),
             text: 'АО "АЛЬФА-БАНК"',
-            link: 'https://prolife.ru/static/upload/iblock/b21/rekvizity_alpha-bank.pdf'
-          }
-        ]
+            link:
+              "https://prolife.ru/static/upload/iblock/b21/rekvizity_alpha-bank.pdf",
+          },
+        ],
       },
       {
         id: Math.random(),
-        topic: 'Прочее',
+        topic: "Прочее",
         items: [
           {
             id: Math.random(),
-            text: 'Устав',
-            link: 'https://prolife.ru/static/upload/pdf/ustav_20_10_2021.pdf'
+            text: "Устав",
+            link: "https://prolife.ru/static/upload/pdf/ustav_20_10_2021.pdf",
           },
           {
             id: Math.random(),
-            text: 'Соглашение об электронном документообороте',
-            link: 'https://prolife.ru/static/upload/pdf/electronic-doc.pdf'
+            text: "Соглашение об электронном документообороте",
+            link: "https://prolife.ru/static/upload/pdf/electronic-doc.pdf",
           },
           {
             id: Math.random(),
-            text: 'Политика в отношении обработки персональных данных',
-            link: 'https://prolife.ru/static/upload/iblock/67c/politika-po-obrabotke-pd.pdf'
-          }
-        ]
-      }
+            text: "Политика в отношении обработки персональных данных",
+            link:
+              "https://prolife.ru/static/upload/iblock/67c/politika-po-obrabotke-pd.pdf",
+          },
+        ],
+      },
     ],
   },
 };

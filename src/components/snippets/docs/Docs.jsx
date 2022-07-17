@@ -1,15 +1,12 @@
 import React from 'react'
 import s from './Docs.module.css'
 
-const Docs = ({text, docsLink}) => {
+const Docs = ({children, ...props}) => {
   return (
     <div className={s.docs}>
-      <a href={docsLink} target="_blank" rel="noopener noreferrer">
-        <img src="/imgs/snippets/docs.png" alt="document" />
-        <span>{text}</span>
-      </a>
+      <a {...props}>{children}</a>
     </div>
-  );
+  ); 
 }
 
-export default Docs
+export default Docs;
