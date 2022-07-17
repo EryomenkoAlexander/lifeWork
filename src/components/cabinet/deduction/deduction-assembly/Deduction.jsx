@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import Docs from '../../../snippets/docs/Docs'
 import s from './Deduction.module.css'
 
 const Deduction = () => {
@@ -18,12 +17,6 @@ const Deduction = () => {
               <ul>{i.list && i.list.map((l) => <li key={l}>{l}</li>)}</ul>
               <p>{i.subInfo}</p>
             </div>
-          ))}
-        </div>
-
-        <div className={s.docs}>
-          {deduction.docs.map((d) => (
-            <Docs text={d.textLink} docsLink={d.documentLink} key={d.textLink} />
           ))}
         </div>
       </div>
