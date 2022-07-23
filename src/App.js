@@ -11,6 +11,7 @@ import NotFound from "./components/not-found/NotFound";
 import LoginFailPopup from "./components/snippets/login-fail-popup/LoginFailPopup";
 import Loader from "./components/snippets/loader/Loader";
 import SuccessPopup from "./components/snippets/success-popup/SuccessPopup";
+import FailPopup from "./components/snippets/fail-popup/FailPopup";
 
 function App(props) {
   return (
@@ -19,6 +20,7 @@ function App(props) {
       <main>
         <LoginFailPopup />
         <SuccessPopup />
+        <FailPopup />
         <Loader />
         
         <Routes>

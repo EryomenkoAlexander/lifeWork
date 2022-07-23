@@ -1,0 +1,10 @@
+.paymentForm {
+    width: 100%;
+    padding: 50px 30px;
+    border-radius: 0 10px 10px 0;
+    width: 60%;
+}
+
+.wrapper button {
+    margin: 10px auto 0;
+}

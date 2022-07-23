@@ -16,7 +16,8 @@ let initialState = {
     card: "",
     location: "Санкт-Петербург",
     policies: [],
-    messages: []
+    messages: [],
+    bank: 0,
   },
   users: [
     {
@@ -32,7 +33,8 @@ let initialState = {
         card: "",
         location: "Город",
         policies: [],
-        messages: []
+        messages: [],
+        bank: 0,
     },
   ],
 };
@@ -45,6 +47,7 @@ let userSlice = createSlice({
       let newUser = {
         ...action.payload,
         location: "Город",
+        bank: 0,
         programs: [],
         messages: [],
       };
@@ -82,6 +85,7 @@ let userSlice = createSlice({
       state.activeUser.location = action.payload;
     },
     setPolicy: (state, action) => {
+      state.activeUser.bank -= action.payload.price;
       let d = new Date()
       state.activeUser.policies.push({
         ...action.payload,
@@ -123,6 +127,9 @@ let userSlice = createSlice({
     },
     removeAllMessages: (state, action) => {
       state.activeUser.messages = [];
+    },
+    addBank: (state, action) => {
+      state.activeUser.bank += +action.payload;
     }
   },
 });
@@ -141,5 +148,6 @@ export const {
   setMessage,
   removeMessage,
   removeAllMessages,
+  addBank,
 } = userSlice.actions;
 export default userSlice.reducer;

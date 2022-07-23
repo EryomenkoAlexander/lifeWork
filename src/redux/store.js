@@ -14,6 +14,7 @@ import typesInsuranceSlice from "./slices/typesInsurance-slice";
 import usefulButtonsSlice from "./slices/usefulButtons-slice";
 import userSlice from "./slices/user-slice";
 import successPopupSlice from "./slices/successPopup-slice";
+import failPopupSlice from "./slices/failPopup-slice";
 
 let store = configureStore({
     reducer: {
@@ -32,6 +33,7 @@ let store = configureStore({
         loginFailPopup: loginFailPopupSlice,
         successPopup: successPopupSlice,
         loader: loaderSlice,
+        failPopup: failPopupSlice
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: false,
