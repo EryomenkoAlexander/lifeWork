@@ -85,6 +85,7 @@ let userSlice = createSlice({
       state.activeUser.location = action.payload;
     },
     setPolicy: (state, action) => {
+      state.activeUser.bank -= action.payload.price;
       let d = new Date()
       state.activeUser.policies.push({
         ...action.payload,

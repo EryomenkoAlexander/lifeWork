@@ -2,7 +2,9 @@ import React from "react";
 import s from "./Program.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setMessage, setPolicy } from "../../../../redux/slices/user-slice";
-import { setShowPopup } from "../../../../redux/slices/successPopup-slice";
+import { setShowPopup as setSuccessPopup } from "../../../../redux/slices/successPopup-slice";
+import { setShowPopup as setFailPopup } from "../../../../redux/slices/failPopup-slice";
+import { setShowLoading } from '../../../../redux/slices/loader-slice'
 
 const Program = ({ data }) => {
   let dispatch = useDispatch();
@@ -20,30 +22,38 @@ const Program = ({ data }) => {
   };
 
   let buyProgram = (program) => {
-    if (bank >= program.price) {
-      if (checkRepeatProgram(program)) {
-        dispatch(setPolicy(program));
+    dispatch(setShowLoading(true));
+    setTimeout(() => {
+      dispatch(setShowLoading(false));
+      if (bank >= program.price) {
+        if (checkRepeatProgram(program)) {
+          dispatch(setPolicy(program));
+          dispatch(
+            setMessage({
+              from: "Администрация",
+              title: "Покупка",
+              text: `Покупка программы «${program.name}» прошла успешно. Со счета списано ${program.price} ₽.`,
+            })
+          );
+          dispatch(setSuccessPopup(true));
+          setTimeout(() => {
+            dispatch(setSuccessPopup(false));
+          }, 2500);
+        }
+      } else {
         dispatch(
           setMessage({
             from: "Администрация",
             title: "Покупка",
-            text: `Покупка программы «${program.name}» прошла успешно.`,
+            text: `Покупка программы «${program.name}» не удалась. Недостаточно средств на счету.`,
           })
         );
-        dispatch(setShowPopup(true));
+        dispatch(setFailPopup(true));
         setTimeout(() => {
-          dispatch(setShowPopup(false));
+          dispatch(setFailPopup(false));
         }, 2500);
       }
-    } else {
-      dispatch(
-        setMessage({
-          from: "Администрация",
-          title: "Покупка",
-          text: `Покупка программы «${program.name}» не удалась. Недостаточно средств на счету.`,
-        })
-      );
-    }
+    }, 1500);
   };
 
   return (

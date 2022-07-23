@@ -1,11 +1,11 @@
 import React from 'react'
-import s from './SuccessPopup.module.css'
+import s from './FailPopup.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { setShowPopup } from '../../../redux/slices/successPopup-slice'
+import { setShowPopup } from '../../../redux/slices/failPopup-slice'
 
-const SuccessPopup = () => {
+const FailPopup = () => {
     let dispatch = useDispatch()
-    let isShowPopup = useSelector(state => state.successPopup.isShowPopup)
+    let isShowPopup = useSelector(state => state.failPopup.isShowPopup)
 
   return (
     <div
@@ -16,10 +16,10 @@ const SuccessPopup = () => {
       className={[s.wrapper, isShowPopup && s.active].join(" ")}
       onClick={(e) => e.stopPropagation()}
     >
-      <img src="/imgs/popups/success.png" alt="success" />
+      <img src="/imgs/popups/fail.png" alt="fail" />
     </div>
   </div>
   )
 }
 
-export default SuccessPopup
+export default FailPopup

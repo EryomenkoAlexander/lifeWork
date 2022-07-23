@@ -5,7 +5,7 @@ let initialState = {
 }
 
 let failPopupSlice = createSlice({
-    name: 'succesPopup',
+    name: 'failPopup',
     initialState,
     reducers: {
         setShowPopup: (state, action) => {
