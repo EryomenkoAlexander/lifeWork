@@ -504,6 +504,7 @@ let initialState = {
         shortInfo:
           "программа накопительного страхования, с единовременной выплатой.",
         docs: "/docs/programs/nb.zip",
+        price: 12000,
       },
       {
         id: Math.random(),
@@ -511,12 +512,14 @@ let initialState = {
         shortInfo:
           "программа накопительного страхования для детей, с единовременной выплатой.",
         docs: "/docs/programs/nbd.zip",
+        price: 15000
       },
       {
         id: Math.random(),
         name: "НС1",
         shortInfo: "Индивидуальное страхование от несчастных случаев.",
         docs: "/docs/programs/ns1.zip",
+        price: 15000
       },
       {
         id: Math.random(),
@@ -524,6 +527,7 @@ let initialState = {
         shortInfo:
           "программа страхования от несчастных случаев для всей семьи.",
         docs: "/docs/programs/nsp.zip",
+        price: 20000
       },
       {
         id: Math.random(),
@@ -531,6 +535,7 @@ let initialState = {
         shortInfo:
           "программа страхования от несчастных случаев и болезней для детей от 1 до 17 лет включительно.",
         docs: "/docs/programs/neposedy.zip",
+        price: 10000
       },
       {
         id: Math.random(),
@@ -538,6 +543,7 @@ let initialState = {
         shortInfo:
           "программа страхования от несчастных случаев с дополнительным сервисом – «Телемедицина».",
         docs: "/docs/programs/defence_plus.zip",
+        price: 14000,
       },
       {
         id: Math.random(),
@@ -553,7 +559,8 @@ let initialState = {
           "программа, позволяющая обеспечить более высокий уровень медицинской помощи себе и близким",
         docs:
           "https://www.sberbank.ru/common/img/uploaded/pdf/dms/%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B5%D1%86_%D0%BF%D0%BE%D0%BB%D0%B8%D1%81%D0%B0.pdf",
-      },
+        price: 20000
+        },
     ],
   },
   archives: {
