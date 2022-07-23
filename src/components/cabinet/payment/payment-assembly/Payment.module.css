@@ -1,0 +1,60 @@
+.payment * {
+    color: #0D1C41;
+}
+
+.payment > h2 {
+    font-weight: 500;
+    font-size: 34px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.bank {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.bank > div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.bank > div > h3 {
+    font-weight: 400;
+    color: #535D69;
+}
+
+.bank > div > span {
+    font-weight: 400;
+    font-size: 30px;
+    margin-left: 10px;
+    line-height: 1;
+}
+
+.bank > div > p {
+    margin-left: 5px;
+    color: #535D69;
+    font-weight: 500;
+}
+
+.form {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.form button {
+    margin-top: 20px;
+}

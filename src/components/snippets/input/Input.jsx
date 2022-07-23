@@ -53,6 +53,7 @@ const Input = (props) => {
         if (name === 'location' && errors.location) return errors.location.message
         if (name === 'title' && errors.title) return errors.title.message
         if (name === 'hashtag' && errors.hashtag) return errors.hashtag.message 
+        if (name === 'money' && errors.money) return errors.money.message
       }
 
     return (

@@ -648,6 +648,24 @@ let initialState = {
       },
     ],
   },
+  payment: {
+    title: "Оплата",
+    inputs: [
+      {
+        id: Math.random(),
+        type: "number",
+        title: "Сумма пополнения",
+        name: "money",
+        placeholder: '150 000 ₽',
+        options: {
+          required: {
+            value: true,
+            message: "Введите сумму пополнения",
+          },
+        },
+      },
+    ],
+  },
 };
 
 let cabinetSlice = createSlice({
