@@ -674,7 +674,7 @@ let initialState = {
     ],
   },
   calculate: {
-    title: "Калькулятор",
+    title: "Калькулятор - Страхование жизни",
     inputs: [
       {
         id: Math.random(),
@@ -692,7 +692,7 @@ let initialState = {
       {
         id: Math.random(),
         type: "number",
-        title: "Срок страхования (лет)",
+        title: "Срок страхования, лет",
         name: "term",
         placeholder: "5",
         options: {
@@ -701,23 +701,6 @@ let initialState = {
             message: "Введите срок страхования",
           },
         },
-      },
-      {
-        id: Math.random(),
-        type: "radio",
-        title: "Пол",
-        list: ["мужской", "женский"],
-      },
-      {
-        id: Math.random(),
-        type: "select",
-        title: "Переодичность взносов",
-        list: [
-          'Раз в месяц',
-          'Раз в квартал',
-          'Раз в полгода',
-          'Раз в год',
-        ],
       },
       {
         id: Math.random(),
@@ -731,6 +714,23 @@ let initialState = {
             message: "Введите страховую сумму",
           },
         },
+      },
+      {
+        id: Math.random(),
+        type: "radio",
+        title: "Пол",
+        list: ["мужской", "женский"],
+      },
+      {
+        id: Math.random(),
+        type: "select",
+        title: "Периодичность взносов",
+        list: [
+          'Раз в месяц',
+          'Раз в квартал',
+          'Раз в полгода',
+          'Раз в год',
+        ],
       },
     ],
   },

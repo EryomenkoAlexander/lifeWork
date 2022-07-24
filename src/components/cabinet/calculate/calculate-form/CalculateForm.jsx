@@ -17,34 +17,75 @@ const CalculateForm = ({ inputs }) => {
     mode: "onBlur",
   });
 
+  let [calcRes, setCalcRes] = useState()
   let [gender, setGender] = useState("мужской");
   let [fee, setFee] = useState("");
 
-  let onSubmit = (data) => {
-    console.log(data, gender, fee);
+  let getError = (name) => {
+    setError(
+      name,
+      {
+        type: "negativeNum",
+        message: "Неверный формат",
+      },
+      { shouldFocus: true }
+    );
+  }
+
+  let onSubmit = ({ insuredSum, term, age }) => {
+    if (age <= 0) return getError("age");
+    if (term <= 0) return getError("term");
+    if (insuredSum <= 0) return getError("insuredSum");
+
+    let res = (insuredSum * term) / age;
+    switch (fee) {
+      case "Раз в квартал":
+        res *= 3;
+        break;
+      case "Раз в полгода":
+        res *= 6;
+        break;
+      case "Раз в год":
+        res *= 12;
+        break;
+      default:
+        setCalcRes(res);
+    }
+    setCalcRes(Math.round(res));
   };
 
   return (
     <div className={s.calculateForm}>
       <div className={s.wrapper}>
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
+          <div>
             {inputs.map((i) => (
-            <div key={i.id}>
-              {i.list ? (
-                i.type === "radio" ? (
-                  <RadioList data={i} value={gender} setValue={setGender} />
+              <div key={i.id} className={s.item}>
+                {i.list ? (
+                  i.type === "radio" ? (
+                    <div className={s.list}>
+                      <RadioList data={i} value={gender} setValue={setGender} />
+                    </div>
+                  ) : (
+                    <div className={s.list}>
+                      <SelectList data={i} value={fee} setValue={setFee} />
+                    </div>
+                  )
                 ) : (
-                  <SelectList data={i} value={fee} setValue={setFee} />
-                )
-              ) : (
-                <Input data={i} register={register} error={errors} />
-              )}
-            </div>
-          ))}
-            </div>
-
-            <Button>Расчитать</Button>
+                  <Input data={i} register={register} errors={errors} />
+                )}
+              </div>
+            ))}
+          </div>
+          <div className={s.res}>
+            <Button>Рассчитать</Button>
+            {calcRes && (
+              <div>
+                итого:
+                <span>{calcRes}</span>₽
+              </div>
+            )}
+          </div>
         </form>
       </div>
     </div>

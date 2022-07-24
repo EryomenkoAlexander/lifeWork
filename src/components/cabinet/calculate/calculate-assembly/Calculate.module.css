@@ -1,5 +1,12 @@
+.calculate * {
+    color: #0D1C41;
+}
+
 .calculate > h2 {
     font-size: 34px;
     font-weight: 500;
 }
 
+.wrapper {
+    margin-top: 30px;
+}

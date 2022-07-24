@@ -1,0 +1,27 @@
+.wrapper > form {
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.list {
+    margin-bottom: 30px;
+}
+
+.res {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.res > div {
+    font-size: 14px;
+    color: #535D69;
+}
+
+.res > div > span {
+    font-weight: 500;
+    font-size: 26px;
+    color: #57A24B;
+    margin: 0 5px 0 15px;
+}

@@ -5,7 +5,7 @@ import CalculateForm from '../calculate-form/CalculateForm'
 
 const Calculate = () => {
   let calculate = useSelector(state => state.cabinet.calculate)
-  
+
   return (
     <div className={s.calculate}>
       <h2>{calculate.title}</h2>
