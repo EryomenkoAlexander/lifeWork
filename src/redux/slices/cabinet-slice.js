@@ -719,6 +719,19 @@ let initialState = {
           'Раз в год',
         ],
       },
+      {
+        id: Math.random(),
+        type: "number",
+        title: "Страховая сумма",
+        name: "insuredSum",
+        placeholder: "30 000 ₽",
+        options: {
+          required: {
+            value: true,
+            message: "Введите страховую сумму",
+          },
+        },
+      },
     ],
   },
 };
