@@ -26,11 +26,9 @@ const NavItemList = (props) => {
         <span>{i.content}</span>
       </div>
     ));
-    return (<>
-        <div className={s.wrapperList}></div>
+    return (
         <div className={s.NavItemList}>{elList}</div>
-    </>
-    )
+    );
 }
 
 export default NavItemList;
