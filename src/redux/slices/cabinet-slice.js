@@ -512,14 +512,14 @@ let initialState = {
         shortInfo:
           "программа накопительного страхования для детей, с единовременной выплатой.",
         docs: "/docs/programs/nbd.zip",
-        price: 15000
+        price: 15000,
       },
       {
         id: Math.random(),
         name: "НС1",
         shortInfo: "Индивидуальное страхование от несчастных случаев.",
         docs: "/docs/programs/ns1.zip",
-        price: 15000
+        price: 15000,
       },
       {
         id: Math.random(),
@@ -527,7 +527,7 @@ let initialState = {
         shortInfo:
           "программа страхования от несчастных случаев для всей семьи.",
         docs: "/docs/programs/nsp.zip",
-        price: 20000
+        price: 20000,
       },
       {
         id: Math.random(),
@@ -535,7 +535,7 @@ let initialState = {
         shortInfo:
           "программа страхования от несчастных случаев и болезней для детей от 1 до 17 лет включительно.",
         docs: "/docs/programs/neposedy.zip",
-        price: 10000
+        price: 10000,
       },
       {
         id: Math.random(),
@@ -559,8 +559,8 @@ let initialState = {
           "программа, позволяющая обеспечить более высокий уровень медицинской помощи себе и близким",
         docs:
           "https://www.sberbank.ru/common/img/uploaded/pdf/dms/%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B5%D1%86_%D0%BF%D0%BE%D0%BB%D0%B8%D1%81%D0%B0.pdf",
-        price: 20000
-        },
+        price: 20000,
+      },
     ],
   },
   archives: {
@@ -663,13 +663,61 @@ let initialState = {
         type: "number",
         title: "Сумма пополнения",
         name: "money",
-        placeholder: '150 000 ₽',
+        placeholder: "25 000 ₽",
         options: {
           required: {
             value: true,
             message: "Введите сумму пополнения",
           },
         },
+      },
+    ],
+  },
+  calculate: {
+    title: "Калькулятор",
+    inputs: [
+      {
+        id: Math.random(),
+        type: "number",
+        title: "Возраст",
+        name: "age",
+        placeholder: "18",
+        options: {
+          required: {
+            value: true,
+            message: "Введите свой возраст",
+          },
+        },
+      },
+      {
+        id: Math.random(),
+        type: "number",
+        title: "Срок страхования (лет)",
+        name: "term",
+        placeholder: "5",
+        options: {
+          required: {
+            value: true,
+            message: "Введите срок страхования",
+          },
+        },
+      },
+      {
+        id: Math.random(),
+        type: "radio",
+        title: "Пол",
+        list: ["мужской", "женский"],
+      },
+      {
+        id: Math.random(),
+        type: "select",
+        title: "Переодичность взносов",
+        list: [
+          'Раз в месяц',
+          'Раз в квартал',
+          'Раз в полгода',
+          'Раз в год',
+        ],
       },
     ],
   },
