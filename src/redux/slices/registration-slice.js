@@ -158,7 +158,7 @@ let initialState = {
             },
             {
                 id: Math.random(),
-                type: 'text',
+                type: 'number',
                 title: 'Номер карты клиента',
                 name: 'card',
                 placeholder: '123456',
@@ -173,10 +173,6 @@ let initialState = {
                     },
                     maxLength: {
                         value: 6,
-                        message: 'Неверный формат'
-                    },
-                    pattern: {
-                        value: /^[ 0-9]+$/,
                         message: 'Неверный формат'
                     }
                 }

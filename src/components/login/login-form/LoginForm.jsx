@@ -29,17 +29,6 @@ const LoginForm = (props) => {
     dispatch(setShowPopup(false))
   }, [])
 
-  let showError = () => {
-    setError("password", {
-      type: "passwordError",
-      message: "Неверный пароль, попробуйте еще раз",
-    });
-    setError("login", {
-      type: "loginError",
-      message: "Неверный логин, попробуйте еще раз",
-    });
-  };
-
   const onSubmit = (data) => {
     dispatch(setShowLoading(true))
     let formComplete = false;
@@ -48,7 +37,7 @@ const LoginForm = (props) => {
     if (users.length) {
       for (let i = 0; i < users.length; i++) {
         let user = users[i];
-        if (user.login === data.login) {
+        if (user.login === data.login || user.tel === data.login) {
           if (user.password === data.password) {
             formComplete = true;
             break;
@@ -70,7 +59,14 @@ const LoginForm = (props) => {
       }, 1500);
     } else {
       setTimeout(() => {
-        showError()
+        setError("password", {
+          type: "passwordError",
+          message: "Неверный пароль, попробуйте еще раз",
+        });
+        setError("login", {
+          type: "loginError",
+          message: "Неверный логин, попробуйте еще раз",
+        });
         dispatch(setShowLoading(false))
       }, 1500);
     }

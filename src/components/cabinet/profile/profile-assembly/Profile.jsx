@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './Profile.module.css'
 import { useSelector } from 'react-redux'
-import Info from '../info/Info'
+import ProfileForm from '../profile-form/ProfileForm'
 import ProfileHeader from '../profile-header/ProfileHeader'
 
 const Profile = () => {
@@ -11,7 +11,7 @@ const Profile = () => {
     <div className={s.profile}>
       <div className={s.wrapper}>
           <ProfileHeader user={user} />
-          <Info user={user} />
+          <ProfileForm user={user} />
       </div>
     </div>
   );

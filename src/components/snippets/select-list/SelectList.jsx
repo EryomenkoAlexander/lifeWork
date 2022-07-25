@@ -1,11 +1,11 @@
-import { Select, MenuItem, FormControl, InputLabel } from '@mui/material'
-import React from 'react'
-import { useEffect } from 'react';
+import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
+import React from "react";
+import { useEffect } from "react";
 
-const SelectList = ({title, list, value, setValue}) => {
+const SelectList = ({ title, list, value, setValue }) => {
   useEffect(() => {
-    list.length && setValue(list[0])
-  }, [])
+    list.length && setValue(list[0]);
+  }, []);
 
   return (
     <FormControl fullWidth>
@@ -26,4 +26,4 @@ const SelectList = ({title, list, value, setValue}) => {
   );
 };
 
-export default SelectList
+export default SelectList;

@@ -191,7 +191,7 @@ let initialState = {
             pattern: {
               value: /[A-Za-zА-Яа-яЁё]/,
               message: "Неверный формат",
-            },
+            }
           },
         },
       ],
@@ -238,12 +238,6 @@ let initialState = {
           changedType: "text",
           title: "Текущий пароль",
           name: "curPassword",
-          options: {
-            required: {
-              value: false,
-              message: "Введите текущий пароль",
-            },
-          },
         },
         {
           id: Math.random(),
@@ -386,6 +380,45 @@ let initialState = {
   },
   messages: {
     title: "Сообщения",
+  },
+  news: {
+    inputs: [
+      {
+          id: Math.random(),
+          type: 'text',
+          title: 'Превью',
+          name: 'preview',
+          placeholder: 'url',
+      },
+      {
+          id: Math.random(),
+          type: 'text',
+          title: 'Заголовок',
+          name: 'title',
+          placeholder: 'Заголовок',
+          options: {
+              required: {
+                  value: true,
+                  message: 'Введите заголовок'
+              },
+              minLength: {
+                  value: 2,
+                  message: 'Минимум 2 символ'
+              },
+              maxLength: {
+                  value: 30,
+                  message: 'Максимум 30 символов'
+              }
+          }
+      },
+      {
+          id: Math.random(),
+          type: 'text',
+          title: 'Хештеги',
+          name: 'hashtag',
+          placeholder: '#hashtag',
+      },
+  ],
   },
   insuredEvent: {
     title: "Сообщить о страховом случай",

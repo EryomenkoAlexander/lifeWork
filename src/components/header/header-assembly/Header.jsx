@@ -5,7 +5,7 @@ import Cabinet from "../cabinet/Cabinet";
 import s from './Header.module.css'
 import { useSelector } from "react-redux";
 
-const Header = (props) => {
+const Header = () => {
   let number = useSelector(state => state.header.connection.number)
     return (
       <div className={s.header}>

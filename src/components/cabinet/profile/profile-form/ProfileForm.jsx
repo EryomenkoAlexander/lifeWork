@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import s from "./Info.module.css";
+import s from "./ProfileForm.module.css";
 import Input from "../../../snippets/input/Input";
 import { useForm } from "react-hook-form";
 import Button from "../../../snippets/button/Button";
@@ -10,7 +10,7 @@ import { changeTel, changeUserFullName, changeUserPassword, setLocation, setMess
 import { useEffect } from "react";
 import { setShowPopup } from "../../../../redux/slices/successPopup-slice";
 
-const Info = ({ user }) => {
+const ProfileForm = ({ user }) => {
   const {
     register,
     handleSubmit,
@@ -41,7 +41,7 @@ const Info = ({ user }) => {
     e.preventDefault()
     dispatch(unlockFullName(true))
     dispatch(setMessage({
-      from: 'Администрация',
+      from: 'Администрация', 
       title: 'Изменение ФИО',
       text: 'Запрос на изменение ФИО одобрен.'
     }))
@@ -142,7 +142,7 @@ const Info = ({ user }) => {
       }, { shouldFocus: true })
     }
 
-    if (data.location.length) {
+    if (data.location.length) { 
       dispatch(setLocation(data.location))
     } else {
       saveSuccess = false;
@@ -228,4 +228,4 @@ const Info = ({ user }) => {
   );
 };
 
-export default Info;
+export default ProfileForm;

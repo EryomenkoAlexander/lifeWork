@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setMessage, setPolicy } from "../../../../redux/slices/user-slice";
 import { setShowPopup as setSuccessPopup } from "../../../../redux/slices/successPopup-slice";
 import { setShowPopup as setFailPopup } from "../../../../redux/slices/failPopup-slice";
-import { setShowLoading } from '../../../../redux/slices/loader-slice'
+import { setShowLoading } from "../../../../redux/slices/loader-slice";
 
 const Program = ({ data }) => {
   let dispatch = useDispatch();
@@ -22,11 +22,11 @@ const Program = ({ data }) => {
   };
 
   let buyProgram = (program) => {
-    dispatch(setShowLoading(true));
-    setTimeout(() => {
-      dispatch(setShowLoading(false));
-      if (bank >= program.price) {
-        if (checkRepeatProgram(program)) {
+    if (checkRepeatProgram(program)) {
+      dispatch(setShowLoading(true));
+      setTimeout(() => {
+        dispatch(setShowLoading(false));
+        if (bank >= program.price) {
           dispatch(setPolicy(program));
           dispatch(
             setMessage({
@@ -39,21 +39,21 @@ const Program = ({ data }) => {
           setTimeout(() => {
             dispatch(setSuccessPopup(false));
           }, 2500);
+        } else {
+          dispatch(
+            setMessage({
+              from: "Администрация",
+              title: "Покупка",
+              text: `Покупка программы «${program.name}» не удалась. Недостаточно средств на счету.`,
+            })
+          );
+          dispatch(setFailPopup(true));
+          setTimeout(() => {
+            dispatch(setFailPopup(false));
+          }, 2500);
         }
-      } else {
-        dispatch(
-          setMessage({
-            from: "Администрация",
-            title: "Покупка",
-            text: `Покупка программы «${program.name}» не удалась. Недостаточно средств на счету.`,
-          })
-        );
-        dispatch(setFailPopup(true));
-        setTimeout(() => {
-          dispatch(setFailPopup(false));
-        }, 2500);
-      }
-    }, 1500);
+      }, 1500);
+    }
   };
 
   return (

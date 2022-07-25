@@ -12,7 +12,7 @@ const Primary = () => {
         <StatusPolicyCard />
         <RecommendationCard />
       </div>
-    </div>
+    </div> 
   );
 }
 

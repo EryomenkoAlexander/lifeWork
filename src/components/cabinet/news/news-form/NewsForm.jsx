@@ -7,10 +7,10 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { createNews } from "../../../../redux/slices/news-slice";
 import { setMessage } from "../../../../redux/slices/user-slice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setShowPopup } from "../../../../redux/slices/successPopup-slice";
 
-const NewsForm = ({ news }) => {
+const NewsForm = () => {
   const {
     register,
     handleSubmit,
@@ -24,13 +24,14 @@ const NewsForm = ({ news }) => {
   });
 
   let dispatch = useDispatch();
+  let inputs = useSelector(state => state.cabinet.news.inputs)
   let [hashtags, setHashtags] = useState([]);
 
   let addHashtag = (hashtag) => {
-    let hashtegComplete = true;
+    let hashtagComplete = true;
 
     if (hashtag.length < 2) {
-      setError(
+      setError( 
         "hashtag",
         {
           type: "minLength",
@@ -38,7 +39,7 @@ const NewsForm = ({ news }) => {
         },
         { shouldFocus: true }
       );
-      hashtegComplete = false;
+      hashtagComplete = false;
     }
 
     if (hashtag.length > 14) {
@@ -50,10 +51,10 @@ const NewsForm = ({ news }) => {
         },
         { shouldFocus: true }
       );
-      hashtegComplete = false;
+      hashtagComplete = false;
     }
 
-    if (hashtegComplete) {
+    if (hashtagComplete) {
       if (hashtags.length !== 3) {
         setHashtags((hashtags) => [
           ...hashtags,
@@ -97,61 +98,67 @@ const NewsForm = ({ news }) => {
   };
 
   return (
-    <div className={s.wrapper}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          {news.inputs.map((n) => (
-            <Input key={n.id} data={n} register={register} errors={errors} />
-          ))}
-          <div className={s.btnHashtag}>
-            <img
-              src="/imgs/news/plus.png"
-              alt="plus"
-              onClick={() => addHashtag(getValues("hashtag"))}
-            />
-          </div>
-        </div>
-
-        <Textarea
-          errors={errors}
-          register={register}
-          name="textNews"
-          title="Контент"
-          placeholder="Расскажите о новости"
-          options={{
-            required: {
-              value: true,
-              message: "Введите контент новости",
-            },
-            minLength: {
-              value: 30,
-              message: "Минимум 30 симоволов",
-            },
-          }}
-        />
-        <div>
-          <div className={s.hashtags}>
-            <h5>Хештеги:</h5>
-            <div>
-              {hashtags.length > 0 ? (
-                hashtags.map((h) => (
-                  <div key={h.id} className={s.hashtag} onClick={() => removeHashtag(h)}>
-                    {h.value.toUpperCase()}
-                  </div>
-                ))
-              ) : (
-                <div className={s.plugs}>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div> 
-              )}
+    <div className={s.newsForm}>
+      <div className={s.wrapper}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div>
+            {inputs.map((n) => (
+              <Input key={n.id} data={n} register={register} errors={errors} />
+            ))}
+            <div className={s.btnHashtag}>
+              <img
+                src="/imgs/news/plus.png"
+                alt="plus"
+                onClick={() => addHashtag(getValues("hashtag"))}
+              />
             </div>
-            <span>{hashtags.length >= 3 && "Достигнут максимум"}</span>
           </div>
-          <Button>Создать</Button>
-        </div>
-      </form>
+
+          <Textarea
+            errors={errors}
+            register={register}
+            name="textNews"
+            title="Контент"
+            placeholder="Расскажите о новости"
+            options={{
+              required: {
+                value: true,
+                message: "Введите контент новости",
+              },
+              minLength: {
+                value: 30,
+                message: "Минимум 30 симоволов",
+              },
+            }}
+          />
+          <div>
+            <div className={s.hashtags}>
+              <h5>Хештеги:</h5>
+              <div>
+                {hashtags.length > 0 ? (
+                  hashtags.map((h) => (
+                    <div
+                      key={h.id}
+                      className={s.hashtag}
+                      onClick={() => removeHashtag(h)}
+                    >
+                      {h.value.toUpperCase()}
+                    </div>
+                  ))
+                ) : (
+                  <div className={s.plugs}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                )}
+              </div>
+              <span>{hashtags.length >= 3 && "Достигнут максимум"}</span>
+            </div>
+            <Button>Создать</Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
