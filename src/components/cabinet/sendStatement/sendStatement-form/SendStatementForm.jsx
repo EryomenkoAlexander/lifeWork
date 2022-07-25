@@ -2,7 +2,6 @@ import React from 'react'
 import s from './SendStatementForm.module.css'
 import { useForm } from "react-hook-form";
 import Input from '../../../snippets/input/Input'
-import { useEffect } from 'react';
 import Button from '../../../snippets/button/Button'
 import Textarea from '../../../snippets/textarea/Textarea'
 import SelectList from '../../../snippets/select-list/SelectList';
@@ -12,27 +11,23 @@ import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
 import { setMessage } from '../../../../redux/slices/user-slice'
 
 const SendStatementForm = ({inputs}) => {
+  let dispatch = useDispatch()
+  let user = useSelector(state => state.user.activeUser)
+
     const {
         register,
         handleSubmit,
-        setValue,
+        reset,
         formState: { errors },
       } = useForm({
         mode: "onBlur",
+        defaultValues: {
+          fullName: `${user.lastName} ${user.firstName} ${user.patronymic}`,
+          tel: user.tel
+        }
       });
 
-      let dispatch = useDispatch()
-      let user = useSelector(state => state.user.activeUser)
-
       let [policy, setPolicy] = useState('')
-    
-      useEffect(() => {
-        setValue(
-          "fullName",
-          `${user.lastName} ${user.firstName} ${user.patronymic}`
-        );
-        setValue("tel", user.tel);
-      }, []);
     
       let onSubmit = (data) => {
         dispatch(setShowPopup(true))
@@ -44,6 +39,7 @@ const SendStatementForm = ({inputs}) => {
             title: 'Завление',
             text: 'Ваше заявление успешно принято. Ожидайте обратной связи.'
         }))
+        reset()
       }
 
   return (
