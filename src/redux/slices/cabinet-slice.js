@@ -164,7 +164,7 @@ let initialState = {
       step_2: [
         {
           id: Math.random(),
-          type: "text",
+          type: "tel",
           title: "Телефон",
           name: "tel",
           options: {
@@ -191,7 +191,7 @@ let initialState = {
             pattern: {
               value: /[A-Za-zА-Яа-яЁё]/,
               message: "Неверный формат",
-            },
+            }
           },
         },
       ],
@@ -238,12 +238,6 @@ let initialState = {
           changedType: "text",
           title: "Текущий пароль",
           name: "curPassword",
-          options: {
-            required: {
-              value: false,
-              message: "Введите текущий пароль",
-            },
-          },
         },
         {
           id: Math.random(),
@@ -386,6 +380,45 @@ let initialState = {
   },
   messages: {
     title: "Сообщения",
+  },
+  news: {
+    inputs: [
+      {
+          id: Math.random(),
+          type: 'text',
+          title: 'Превью',
+          name: 'preview',
+          placeholder: 'url',
+      },
+      {
+          id: Math.random(),
+          type: 'text',
+          title: 'Заголовок',
+          name: 'title',
+          placeholder: 'Заголовок',
+          options: {
+              required: {
+                  value: true,
+                  message: 'Введите заголовок'
+              },
+              minLength: {
+                  value: 2,
+                  message: 'Минимум 2 символ'
+              },
+              maxLength: {
+                  value: 30,
+                  message: 'Максимум 30 символов'
+              }
+          }
+      },
+      {
+          id: Math.random(),
+          type: 'text',
+          title: 'Хештеги',
+          name: 'hashtag',
+          placeholder: '#hashtag',
+      },
+  ],
   },
   insuredEvent: {
     title: "Сообщить о страховом случай",
@@ -551,6 +584,7 @@ let initialState = {
         shortInfo:
           "оперативная финансовая помощь застрахованным лицам в случае постановки диагноза смертельно опасного заболевания",
         docs: "https://prolife.ru/static/upload/program_health.pdf",
+        price: 18000
       },
       {
         id: Math.random(),
@@ -679,7 +713,7 @@ let initialState = {
       {
         id: Math.random(),
         type: "number",
-        title: "Возраст",
+        title: "Возраст, лет",
         name: "age",
         placeholder: "18",
         options: {
@@ -722,7 +756,7 @@ let initialState = {
         list: ["мужской", "женский"],
       },
       {
-        id: Math.random(),
+        id: Math.random(), 
         type: "select",
         title: "Периодичность взносов",
         list: [
@@ -734,6 +768,80 @@ let initialState = {
       },
     ],
   },
+  sendStatement: {
+    title: 'Направить заявление - Страховая выплата',
+    listDocs: {
+      title: 'Список документов для страховой выплаты:',
+      items: [
+        'Заявление о страховой выплате;',
+        'Страховой полис (договор страхования), либо его копия. Если полиса нет, достаточно указать одно из сведений: название страховой компании, номер полиса, дата выдачи полиса, ФИО застрахованного, государственный номер регистрации авто;',
+        'Копия водительского удостоверения застрахованного или лица, управлявшего авто во время страхового случая;',
+        'Документ, подтверждающий факт наступления страхового случая и размер вреда, причиненного потерпевшим;',
+        'Копии справки организаций здравоохранения о сроке временной нетрудоспособности потерпевшего или справки специализированных учреждений об установлении инвалидности потерпевшего – в случае её установления;',
+        'Нотариально удостоверенная копия свидетельства о смерти потерпевшего и документ, подтверждающий право выгодоприобретателя на возмещение вреда (копия), – в случае смерти потерпевшего;',
+        'Постановление о возбуждении или отказе в возбуждении уголовного дела;',
+        'Копия удостоверения личности выгодоприобретателя (того, кто получит выплату) или оригинал доверенности, выданной представителю юридического лица;',
+        'Документы, подтверждающие расходы, понесённые застрахованным, в целях предотвращения или уменьшения убытков при наступлении страхового случая (при их наличии);',
+        'Документы по оценке размера причиненного вреда, произведенной независимым экспертом (при их наличии);',
+        'Доверенность на получение страховой выплаты (при необходимости).'
+      ]
+    },
+    inputs: [
+      {
+        id: Math.random(),
+        type: "text",
+        title: "ФИО",
+        disabled: true,
+        name: "fullName",
+      },
+      {
+        id: Math.random(),
+        type: "tel",
+        title: "Телефон",
+        disabled: true,
+        name: "tel",
+      },
+      {
+        id: Math.random(),
+        type: "text",
+        title: "Причина обращения",
+        placeholder: 'Заголовок',
+        name: "shortInfo",
+        options: {
+          required: {
+            value: true,
+            message: "Введите причину обращения",
+          },
+          minLength: {
+            value: 2,
+            message: "Минимум 2 символа",
+          }
+        },
+      },
+      {
+        id: Math.random(),
+        type: "textarea",
+        title: "Подробности",
+        placeholder: 'Здесь такое произошло...',
+        name: "details",
+        options: {
+          required: {
+            value: true,
+            message: "Расскажите о случившимся",
+          },
+          minLength: {
+            value: 30,
+            message: "Минимум 30 символов",
+          }
+        },
+      },
+      {
+        id: Math.random(),
+        type: 'select',
+        title: 'Страховой полис',
+      }
+    ]
+  }
 };
 
 let cabinetSlice = createSlice({
@@ -749,5 +857,5 @@ let cabinetSlice = createSlice({
   },
 });
 
-export let { unlockFullName, createNews } = cabinetSlice.actions;
+export let { unlockFullName } = cabinetSlice.actions;
 export default cabinetSlice.reducer;

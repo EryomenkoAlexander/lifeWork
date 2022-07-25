@@ -16,7 +16,7 @@ let initialState = {
                     required: {
                         value: true,
                         message: 'Введите логин'
-                    }
+                    },
                 }
             },
             {

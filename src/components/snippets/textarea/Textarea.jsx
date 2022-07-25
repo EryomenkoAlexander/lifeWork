@@ -5,6 +5,7 @@ const Textarea = ({name, title, placeholder, options, errors, register}) => {
     let getError = (name, errors) => {
         if (name === 'textNews' && errors.textNews) return errors.textNews.message;
         if (name === 'textInsuredEvent' && errors.textInsuredEvent) return errors.textInsuredEvent.message
+        if(name === 'details' && errors.details) return errors.details.message
     }
  
     let getOptions = (options) => {

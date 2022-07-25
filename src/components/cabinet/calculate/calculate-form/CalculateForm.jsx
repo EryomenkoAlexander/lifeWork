@@ -6,16 +6,20 @@ import { useState } from "react";
 import SelectList from "../../../snippets/select-list/SelectList";
 import RadioList from "../../../snippets/radio-list/RadioList";
 import Button from '../../../snippets/button/Button'
+import { useDispatch } from "react-redux";
+import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
 
 const CalculateForm = ({ inputs }) => {
   const {
     register,
-    handleSubmit,
+    handleSubmit, 
     setError,
     formState: { errors },
   } = useForm({
     mode: "onBlur",
   });
+
+  let dispatch = useDispatch()
 
   let [calcRes, setCalcRes] = useState()
   let [gender, setGender] = useState("мужской");
@@ -52,6 +56,10 @@ const CalculateForm = ({ inputs }) => {
         setCalcRes(res);
     }
     setCalcRes(Math.round(res));
+    dispatch(setShowPopup(true))
+    setTimeout(() => {
+      dispatch(setShowPopup(false))
+    }, 2500)
   };
 
   return (
@@ -68,7 +76,12 @@ const CalculateForm = ({ inputs }) => {
                     </div>
                   ) : (
                     <div className={s.list}>
-                      <SelectList data={i} value={fee} setValue={setFee} />
+                      <SelectList
+                        title={i.title}
+                        list={i.list}
+                        value={fee}
+                        setValue={setFee}
+                      />
                     </div>
                   )
                 ) : (

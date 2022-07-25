@@ -13,8 +13,6 @@ const Menu = () => {
     let menu = useSelector(state => state.cabinet.menu)
     let activeUser = useSelector(state => state.user.activeUser)
     let isLoggedIn = useSelector(state => state.user.isLoggedIn)
-    let messages = useSelector(state => state.user.activeUser.messages)
-    let policies = useSelector(state => state.user.activeUser.policies)
 
   let logout = () => {
     dispatch(setShowLoading(true))
@@ -44,12 +42,12 @@ const Menu = () => {
               <span>{i.content}</span>
 
               {isLoggedIn &&
-                (messages.length
+                (activeUser.messages.length
                   ? i.to === "messages" && <div className={s.dot}></div>
                   : "")}
 
               {isLoggedIn &&
-                (policies.length
+                (activeUser.policies.length
                   ? i.to === "policies" && <div className={s.dot}></div>
                   : "")}
             </NavLink>
