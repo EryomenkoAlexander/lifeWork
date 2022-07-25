@@ -584,6 +584,7 @@ let initialState = {
         shortInfo:
           "оперативная финансовая помощь застрахованным лицам в случае постановки диагноза смертельно опасного заболевания",
         docs: "https://prolife.ru/static/upload/program_health.pdf",
+        price: 18000
       },
       {
         id: Math.random(),

@@ -8,6 +8,14 @@
     margin-bottom: 30px;
 }
 
+.list * {
+    color: #2196f3;
+}
+
+.list span {
+    color: #0D1C41;
+}
+
 .res {
     display: flex;
     justify-content: space-between;
