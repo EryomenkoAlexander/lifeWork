@@ -164,7 +164,7 @@ let initialState = {
       step_2: [
         {
           id: Math.random(),
-          type: "text",
+          type: "tel",
           title: "Телефон",
           name: "tel",
           options: {
@@ -722,7 +722,7 @@ let initialState = {
         list: ["мужской", "женский"],
       },
       {
-        id: Math.random(),
+        id: Math.random(), 
         type: "select",
         title: "Периодичность взносов",
         list: [
@@ -734,6 +734,64 @@ let initialState = {
       },
     ],
   },
+  sendStatement: {
+    title: 'Направить заявление - Страховая выплата',
+    inputs: [
+      {
+        id: Math.random(),
+        type: "text",
+        title: "ФИО",
+        disabled: true,
+        name: "fullName",
+      },
+      {
+        id: Math.random(),
+        type: "tel",
+        title: "Телефон",
+        disabled: true,
+        name: "tel",
+      },
+      {
+        id: Math.random(),
+        type: "text",
+        title: "Причина обращения",
+        placeholder: 'Заголовок',
+        name: "shortInfo",
+        options: {
+          required: {
+            value: true,
+            message: "Введите причину обращения",
+          },
+          minLength: {
+            value: 2,
+            message: "Минимум 2 символа",
+          }
+        },
+      },
+      {
+        id: Math.random(),
+        type: "textarea",
+        title: "Подробности",
+        placeholder: 'Здесь такое произошло...',
+        name: "details",
+        options: {
+          required: {
+            value: true,
+            message: "Расскажите о случившимся",
+          },
+          minLength: {
+            value: 30,
+            message: "Минимум 30 символов",
+          }
+        },
+      },
+      {
+        id: Math.random(),
+        type: 'select',
+        title: 'Страховой полис',
+      }
+    ]
+  }
 };
 
 let cabinetSlice = createSlice({
@@ -749,5 +807,5 @@ let cabinetSlice = createSlice({
   },
 });
 
-export let { unlockFullName, createNews } = cabinetSlice.actions;
+export let { unlockFullName } = cabinetSlice.actions;
 export default cabinetSlice.reducer;

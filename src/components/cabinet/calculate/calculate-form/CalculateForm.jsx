@@ -12,7 +12,7 @@ import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
 const CalculateForm = ({ inputs }) => {
   const {
     register,
-    handleSubmit,
+    handleSubmit, 
     setError,
     formState: { errors },
   } = useForm({
@@ -76,7 +76,12 @@ const CalculateForm = ({ inputs }) => {
                     </div>
                   ) : (
                     <div className={s.list}>
-                      <SelectList data={i} value={fee} setValue={setFee} />
+                      <SelectList
+                        title={i.title}
+                        list={i.list}
+                        value={fee}
+                        setValue={setFee}
+                      />
                     </div>
                   )
                 ) : (

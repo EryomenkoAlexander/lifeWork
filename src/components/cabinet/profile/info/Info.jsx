@@ -176,7 +176,7 @@ const Info = ({ user }) => {
                   key={i.id}
                   data={i}
                   register={register}
-                  errors={errors}
+                  errors={errors} 
                 />
               ))}
               <span className={s.remark}>{info.remark}</span>

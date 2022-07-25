@@ -2,20 +2,21 @@ import { Select, MenuItem, FormControl, InputLabel } from '@mui/material'
 import React from 'react'
 import { useEffect } from 'react';
 
-const SelectList = ({data, value, setValue}) => {
+const SelectList = ({title, list, value, setValue}) => {
   useEffect(() => {
-    setValue(data.list[0])
+    list.length && setValue(list[0])
   }, [])
 
   return (
     <FormControl fullWidth>
-      <InputLabel>{data.title}</InputLabel>
+      <InputLabel>{title}</InputLabel>
       <Select
+        disabled={list.length ? false : true}
         value={value}
-        label={data.title}
+        label={title}
         onChange={(e) => setValue(e.target.value)}
       >
-        {data.list.map((i) => (
+        {list.map((i) => (
           <MenuItem key={i} value={i}>
             {i}
           </MenuItem>

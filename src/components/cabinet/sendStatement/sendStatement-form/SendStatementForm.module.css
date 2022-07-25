@@ -1,0 +1,13 @@
+.wrapper > form {
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.wrapper > form textarea {
+    height: 200px;
+}
+
+.list {
+    margin: 10px 0 40px;
+}
