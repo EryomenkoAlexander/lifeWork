@@ -679,7 +679,7 @@ let initialState = {
       {
         id: Math.random(),
         type: "number",
-        title: "Возраст",
+        title: "Возраст, лет",
         name: "age",
         placeholder: "18",
         options: {
