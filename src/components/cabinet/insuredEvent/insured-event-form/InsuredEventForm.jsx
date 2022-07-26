@@ -4,12 +4,14 @@ import s from "./InsuredEventForm.module.css";
 import { useForm } from "react-hook-form";
 import Textarea from "../../../snippets/textarea/Textarea";
 import Button from "../../../snippets/button/Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
 import { setMessage } from '../../../../redux/slices/user-slice'
 
 
 const InsuredEventForm = ({ inputs }) => {
+  let user = useSelector(state => state.user.activeUser)
+
   const {
     register,
     handleSubmit,
@@ -17,6 +19,11 @@ const InsuredEventForm = ({ inputs }) => {
     formState: { errors },
   } = useForm({
     mode: "onBlur",
+    defaultValues: {
+      firstName: user.firstName,
+      tel: user.tel,
+      email: user.login
+    }
   });
 
   let dispatch = useDispatch()
@@ -39,36 +46,18 @@ const InsuredEventForm = ({ inputs }) => {
       <div className={s.wrapper}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <div>
-              {inputs.map((i) => (
+            {inputs.map((i) =>
+              i.type === "textarea" ? (
+                <Textarea data={i} errors={errors} register={register} />
+              ) : (
                 <Input
                   key={i.id}
                   data={i}
                   register={register}
                   errors={errors}
                 />
-              ))}
-            </div>
-
-            <div>
-              <Textarea
-                errors={errors}
-                register={register}
-                name="textInsuredEvent"
-                title="Информация о страховом случае:"
-                placeholder="Подробности"
-                options={{
-                  required: {
-                    value: true,
-                    message: "Расскажите о вашем случае",
-                  },
-                  minLength: {
-                    value: 30,
-                    message: "Расскажите по подробней",
-                  },
-                }}
-              />
-            </div>
+              )
+            )}
           </div>
 
           <Button>

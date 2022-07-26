@@ -45,10 +45,8 @@ const AskQuestionForm = ({inputs}) => {
             {inputs.map((i) =>
               i.type === "textarea" ? (
                 <Textarea
-                  name={i.name}
-                  title={i.title}
-                  placeholder={i.placeholder}
-                  options={i.options}
+                  key={i.id}
+                  data={i}
                   errors={errors}
                   register={register}
                 />
@@ -63,8 +61,8 @@ const AskQuestionForm = ({inputs}) => {
             )}
           </div>
           <Button>
-          Отправить
-          <img src="/imgs/cabinet/askQuestion/send.png" alt="send" />
+            Отправить
+            <img src="/imgs/cabinet/askQuestion/send.png" alt="send" />
           </Button>
         </form>
       </div>

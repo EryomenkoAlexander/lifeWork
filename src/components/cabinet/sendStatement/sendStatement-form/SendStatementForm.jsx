@@ -52,10 +52,7 @@ const SendStatementForm = ({inputs}) => {
                 {i.type === "textarea" || i.type === "select" ? (
                   i.type === "textarea" ? (
                     <Textarea
-                      name={i.name}
-                      title={i.title}
-                      placeholder={i.placeholder}
-                      options={i.options}
+                      data={i}
                       register={register}
                       errors={errors}
                     />

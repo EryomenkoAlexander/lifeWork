@@ -17,45 +17,18 @@ const NewsForm = () => {
     reset,
     getValues,
     setValue,
-    setError,
     formState: { errors },
   } = useForm({
     mode: "onBlur",
   });
-
+ 
   let dispatch = useDispatch();
   let inputs = useSelector(state => state.cabinet.news.inputs)
   let [hashtags, setHashtags] = useState([]);
 
   let addHashtag = (hashtag) => {
-    let hashtagComplete = true;
-
-    if (hashtag.length < 2) {
-      setError( 
-        "hashtag",
-        {
-          type: "minLength",
-          message: "Минимум 2 символа",
-        },
-        { shouldFocus: true }
-      );
-      hashtagComplete = false;
-    }
-
-    if (hashtag.length > 14) {
-      setError(
-        "hashtag",
-        {
-          type: "maxLength",
-          message: "Максимум 14 символов",
-        },
-        { shouldFocus: true }
-      );
-      hashtagComplete = false;
-    }
-
-    if (hashtagComplete) {
-      if (hashtags.length !== 3) {
+    if (hashtag.length >= 2 && hashtag.length <= 16) {
+      if (hashtags.length !== 4) {
         setHashtags((hashtags) => [
           ...hashtags,
           {
@@ -73,10 +46,8 @@ const NewsForm = () => {
   }
 
   let onSubmit = (data) => {
-    let d = new Date();
     let news = {
       preview: data.preview,
-      date: [d.getDay(), d.getMonth(), d.getFullYear()].join("."),
       title: data.title,
       text: data.textNews,
       hashtags: [...hashtags],
@@ -102,35 +73,27 @@ const NewsForm = () => {
       <div className={s.wrapper}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            {inputs.map((n) => (
-              <Input key={n.id} data={n} register={register} errors={errors} />
+            {inputs.map((i) => (
+              <div className={s.item} key={i.id}>
+                {i.type === "textarea" ? (
+                  <Textarea data={i} errors={errors} register={register} />
+                ) : (
+                  <>
+                    <Input data={i} register={register} errors={errors} />
+                    {i.name === "hashtag" && (
+                      <img
+                        className={s.btnHashtag}
+                        src="/imgs/news/plus.png"
+                        alt="plus"
+                        onClick={() => addHashtag(getValues("hashtag"))}
+                      />
+                    )}
+                  </>
+                )}
+              </div>
             ))}
-            <div className={s.btnHashtag}>
-              <img
-                src="/imgs/news/plus.png"
-                alt="plus"
-                onClick={() => addHashtag(getValues("hashtag"))}
-              />
-            </div>
           </div>
 
-          <Textarea
-            errors={errors}
-            register={register}
-            name="textNews"
-            title="Контент"
-            placeholder="Расскажите о новости"
-            options={{
-              required: {
-                value: true,
-                message: "Введите контент новости",
-              },
-              minLength: {
-                value: 30,
-                message: "Минимум 30 симоволов",
-              },
-            }}
-          />
           <div>
             <div className={s.hashtags}>
               <h5>Хештеги:</h5>
@@ -150,12 +113,16 @@ const NewsForm = () => {
                     <div></div>
                     <div></div>
                     <div></div>
+                    <div></div>
                   </div>
                 )}
               </div>
-              <span>{hashtags.length >= 3 && "Достигнут максимум"}</span>
+              <span>{hashtags.length >= 4 && "Достигнут максимум"}</span>
             </div>
-            <Button>Создать</Button>
+            <Button>
+              Создать
+              <img src="/imgs/news/createNews.png" alt="news" />
+            </Button>
           </div>
         </form>
       </div>
