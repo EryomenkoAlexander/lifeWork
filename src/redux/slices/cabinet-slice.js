@@ -942,6 +942,9 @@ let initialState = {
         },
       },
     ]
+  },
+  checkAgent: {
+    title: 'Проверить контрагента',
   }
 };
 

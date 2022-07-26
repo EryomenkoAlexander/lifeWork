@@ -1,0 +1,43 @@
+.checkAgent > h2 {
+    font-weight: 500;
+    font-size: 34px;
+}
+
+.wrapper {
+    margin-top: 30px;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background: linear-gradient(to right, rgba(253, 185, 155, 0.2), rgba(207, 139, 243, 0.2), rgba(167, 112, 239, 0.2));
+}
+
+.search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.search input {
+    cursor: text;
+    padding-right: 60px;
+}
+
+.icon {
+    cursor: pointer;
+    position: absolute;
+    top: 15%;
+    right: 10px;
+    border-radius: 100%;
+    padding: 5px;
+}
+
+.icon:hover {
+    transition: all .2s;
+    transform: scale(1.2);
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.icon * {
+    cursor: pointer;
+}
