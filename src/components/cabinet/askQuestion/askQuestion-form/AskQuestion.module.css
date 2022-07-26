@@ -1,0 +1,7 @@
+.wrapper > form textarea {
+    height: 200px;
+}
+
+.wrapper > form button {
+    margin-top: 30px;
+}

@@ -10,9 +10,11 @@ let newsSlice = createSlice({
     initialState,
     reducers: {
         createNews: (state, action) => {
+            let d = new Date()
             state.items.push({
                 ...action.payload,
                 id: Math.random(),
+                date: [d.getDate(), d.getMonth() + 1, d.getFullYear()].join("."),
             })
         }
     }

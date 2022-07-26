@@ -1,10 +1,11 @@
-.insuredEventForm {
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 20px;
+.wrapper > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
 }
 
-.wrapper > form {
+.wrapper > form > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,12 +14,6 @@
 
 .wrapper > form > button > img {
     width: 30px;
-}
-
-.wrapper > form > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .wrapper > form > div > div {
@@ -31,5 +26,5 @@
 }
 
 .wrapper > form textarea {
-    height: 270px;
+    height: 200px;
 }

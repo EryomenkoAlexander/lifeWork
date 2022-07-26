@@ -9,7 +9,7 @@ let initialState = {
     items: [
       {
         id: Math.random(),
-        imgSrc: "/imgs/cabinet/menu/profile.svg",
+        imgSrc: "/imgs/cabinet/menu/profile.svg", 
         content: "Профиль",
         to: "profile",
       },
@@ -395,7 +395,7 @@ let initialState = {
           type: 'text',
           title: 'Заголовок',
           name: 'title',
-          placeholder: 'Заголовок',
+          placeholder: 'Время скидок',
           options: {
               required: {
                   value: true,
@@ -417,7 +417,34 @@ let initialState = {
           title: 'Хештеги',
           name: 'hashtag',
           placeholder: '#hashtag',
+          options: {
+            minLength: {
+              value: '2',
+              message: 'Минимум 2 символа'
+            },
+            maxLength: {
+              value: 16,
+              message: "Максимум 16 символов"
+            }
+          }
       },
+      {
+        id: Math.random(),
+        type: 'textarea',
+        name: 'textNews',
+        title: 'Контент',
+        placeholder: 'Расскажите о новости',
+        options: {
+          required: {
+            value: true,
+            message: "Введите контент новости",
+          },
+          minLength: {
+            value: 30,
+            message: "Минимум 30 симоволов",
+          },
+        }
+      }
   ],
   },
   insuredEvent: {
@@ -430,6 +457,7 @@ let initialState = {
         type: "text",
         title: "Ваше имя",
         name: "firstName",
+        disabled: true,
         placeholder: "Иван",
         options: {
           required: {
@@ -451,6 +479,7 @@ let initialState = {
         type: "tel",
         title: "Телефон",
         name: "tel",
+        disabled: true,
         placeholder: "+7(___)___-__-__",
         options: {
           required: {
@@ -471,7 +500,8 @@ let initialState = {
         id: Math.random(),
         type: "email",
         title: "E-mail",
-        name: "login",
+        name: "email",
+        disabled: true,
         placeholder: "mail@example.ru",
         options: {
           required: {
@@ -484,6 +514,23 @@ let initialState = {
           },
         },
       },
+      {
+        id: Math.random(),
+        type: 'textarea',
+        title: 'Информация о страховом случае',
+        placeholder: 'Подробности',
+        name: "textInsuredEvent",
+        options: {
+          required: {
+            value: true,
+            message: "Расскажите о вашем случае",
+          },
+          minLength: {
+            value: 30,
+            message: "Расскажите по подробней",
+          },
+        }
+      }
     ],
   },
   deduction: {
@@ -576,7 +623,7 @@ let initialState = {
         shortInfo:
           "программа страхования от несчастных случаев с дополнительным сервисом – «Телемедицина».",
         docs: "/docs/programs/defence_plus.zip",
-        price: 14000,
+        price: 14000, 
       },
       {
         id: Math.random(),
@@ -840,6 +887,60 @@ let initialState = {
         type: 'select',
         title: 'Страховой полис',
       }
+    ]
+  },
+  askQuestion: {
+    title: 'Задать вопрос',
+    inputs: [
+      {
+        id: Math.random(),
+        type: "email",
+        title: "E-mail",
+        disabled: true,
+        name: "email",
+      },
+      {
+        id: Math.random(),
+        type: "text",
+        title: "Тема",
+        name: "topic",
+        placeholder: 'Пополнение баланса',
+        options: {
+          required: {
+            value: true,
+            message: "Введите тему",
+          },
+          minLength: {
+            value: 2,
+            message: "Минимум 2 символа",
+          },
+          pattern: {
+            value: /[A-Za-zА-Яа-яЁё]/,
+            message: "Неверный формат",
+          },
+        },
+      },
+      {
+        id: Math.random(),
+        type: "textarea",
+        title: "Вопрос",
+        name: "question",
+        placeholder: 'Как купить страховую программу?',
+        options: {
+          required: {
+            value: true,
+            message: "Введите вопрос",
+          },
+          minLength: {
+            value: 10,
+            message: "Минимум 10 символов",
+          },
+          pattern: {
+            value: /[A-Za-zА-Яа-яЁё]/,
+            message: "Неверный формат",
+          },
+        },
+      },
     ]
   }
 };

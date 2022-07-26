@@ -1,11 +1,12 @@
 import React from 'react'
 import s from './Textarea.module.css'
 
-const Textarea = ({name, title, placeholder, options, errors, register}) => {
+const Textarea = ({data, errors, register}) => {
     let getError = (name, errors) => {
         if (name === 'textNews' && errors.textNews) return errors.textNews.message;
         if (name === 'textInsuredEvent' && errors.textInsuredEvent) return errors.textInsuredEvent.message
-        if(name === 'details' && errors.details) return errors.details.message
+        if (name === 'details' && errors.details) return errors.details.message
+        if (name === 'question' && errors.question) return errors.question.message
     }
  
     let getOptions = (options) => {
@@ -24,18 +25,18 @@ const Textarea = ({name, title, placeholder, options, errors, register}) => {
 
   return (
     <label
-      className={[s.wrapper, getError(name, errors) && s.error].join(
+      className={[s.wrapper, getError(data.name, errors) && s.error].join(
         " "
       )}
     >
-      <h4>{title}</h4>
+      <h4>{data.title}</h4>
       <div>
       <textarea
-        placeholder={placeholder}
-        {...register(name, getOptions(options))}
+        placeholder={data.placeholder}
+        {...register(data.name, getOptions(data.options))}
       ></textarea>
       </div>
-      <span>{getError(name, errors) || "⁣"}</span>
+      <span>{getError(data.name, errors) || "⁣"}</span>
     </label>
   );
 }
