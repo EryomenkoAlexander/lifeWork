@@ -58,6 +58,7 @@ const Input = (props) => {
         if (name === 'term' && errors.term) return errors.term.message
         if (name === 'insuredSum' && errors.insuredSum) return errors.insuredSum.message
         if (name === 'shortInfo' && errors.shortInfo) return errors.shortInfo.message
+        if (name === 'topic' && errors.topic) return errors.topic.message
       }
 
     return (
