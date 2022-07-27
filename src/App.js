@@ -12,6 +12,7 @@ import LoginFailPopup from "./components/snippets/login-fail-popup/LoginFailPopu
 import Loader from "./components/snippets/loader/Loader";
 import SuccessPopup from "./components/snippets/success-popup/SuccessPopup";
 import FailPopup from "./components/snippets/fail-popup/FailPopup";
+import MyAlert from "./components/snippets/alert/MyAlert";
 
 function App(props) {
   return (
@@ -22,7 +23,8 @@ function App(props) {
         <SuccessPopup />
         <FailPopup />
         <Loader />
-        
+        <MyAlert />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />
