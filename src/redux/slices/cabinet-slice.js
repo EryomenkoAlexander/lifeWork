@@ -904,7 +904,7 @@ let initialState = {
         type: "text",
         title: "Тема",
         name: "topic",
-        placeholder: 'Пополнение баланса',
+        placeholder: 'Программы',
         options: {
           required: {
             value: true,

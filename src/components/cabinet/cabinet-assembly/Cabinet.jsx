@@ -1,6 +1,6 @@
 import React from "react";
 import s from './Cabinet.module.css'
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Menu from "../menu/menu-assembly/Menu";
 import { Routes, Route, useNavigate } from "react-router";
 import { useEffect } from "react";
@@ -18,26 +18,19 @@ import Calculate from "../calculate/calculate-assembly/Calculate";
 import SendStatement from "../sendStatement/sendStatement-assembly/SendStatement";
 import AskQuestion from "../askQuestion/askQuestion-assembly/AskQuestion";
 import CheckAgent from "../checkAgent/checkAgent-assembly/CheckAgent";
-import { setCurSiteLocation } from "../../../redux/slices/user-slice";
 import NotFound from "../../not-found/NotFound";
 import { NavLink } from 'react-router-dom'
 import Primary from '../primary/primary-assembly/Primary'
 
 const Cabinet = (props) => {
   let navigate = useNavigate();
-  let dispatch = useDispatch(); 
 
   let isLoggedIn = useSelector((state) => state.user.isLoggedIn);
-  let curSiteLocation = useSelector((state) => state.user.curSiteLocation);
   let title = useSelector((state) => state.cabinet.title);
   let menuItems = useSelector((state) => state.cabinet.menu.items);
 
   useEffect(() => {
-    if (isLoggedIn) {
-      dispatch(setCurSiteLocation(""));
-    } else {
-      navigate("/login", { replace: true });
-    }
+    !isLoggedIn && navigate("/login", { replace: true });
   }, []);
 
   let getRouteElement = (path) => {
@@ -78,18 +71,6 @@ const Cabinet = (props) => {
   return (
     <div className={s.cabinet}>
       <div className="container">
-        <div className={s.curSiteLocation}>
-          {curSiteLocation.map((i, idx) => (
-            <div key={i}>
-              {idx !== 0 ? (
-                <img src="/imgs/cabinet/arrow-right.svg" alt="arrow-right" />
-              ) : (
-                ""
-              )}
-              <span>{i}</span>
-            </div>
-          ))}
-        </div>
         <div className={s.wrapper}>
           <div className={s.menu}>
             <NavLink to="/cabinet" className={s.title}>

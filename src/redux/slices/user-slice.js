@@ -1,42 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
-  curSiteLocation: ["Главная", "Личный кабинет"],
-  isLoggedIn: true,
-  activeUser: {
-    subscription: false,
-    agreement: true,
-    lastName: "Ерёменко",
-    firstName: "Александр",
-    patronymic: "Юрьевич",
-    tel: "+77055720424",
-    login: "sasha.eryomenko77@gmail.com",
-    password: "121212",
-    date: "0123-03-12",
-    card: "",
-    location: "Санкт-Петербург",
-    policies: [],
-    messages: [],
-    bank: 0,
-  },
-  users: [
-    {
-        subscription: false,
-        agreement: true,
-        lastName: "Ерёменко",
-        firstName: "Александр",
-        patronymic: "Юрьевич",
-        tel: "+77055720424",
-        login: "sasha.eryomenko77@gmail.com",
-        password: "121212",
-        date: "0123-03-12",
-        card: "",
-        location: "Город",
-        policies: [],
-        messages: [],
-        bank: 0,
-    },
-  ],
+  isLoggedIn: false,
+  activeUser: {},
+  users: [],
 };
 
 let userSlice = createSlice({
@@ -48,7 +15,7 @@ let userSlice = createSlice({
         ...action.payload,
         location: "Город",
         bank: 0,
-        programs: [],
+        policies: [],
         messages: [],
       };
       state.users.push(newUser);
@@ -75,11 +42,6 @@ let userSlice = createSlice({
       }
       state.isLoggedIn = false;
       state.activeUser = {};
-    },
-    setCurSiteLocation: (state, action) => {
-      if (action.payload !== "") {
-        state.curSiteLocation[2] = action.payload;
-      } else state.curSiteLocation.splice(2, 1);
     },
     setLocation: (state, action) => {
       state.activeUser.location = action.payload;
@@ -139,7 +101,6 @@ export const {
   setActiveUser,
   checkLoggedIn,
   logoutUser,
-  setCurSiteLocation,
   setLocation,
   setPolicy,
   changeUserPassword,

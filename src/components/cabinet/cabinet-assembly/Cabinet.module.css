@@ -2,22 +2,6 @@
     padding: 50px 0;
 }
 
-.curSiteLocation {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: #9C9C9C;
-    margin: -25px 0 35px;
-}
-
-.curSiteLocation > div:first-child {
-    font-weight: 600;
-}
-
-.curSiteLocation > div > img {
-    margin: 0 10px;
-}
-
 .wrapper {
  display: flex;
  justify-content: flex-start;
