@@ -3,40 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 let initialState = {
   curSiteLocation: ["Главная", "Личный кабинет"],
   isLoggedIn: false,
-  activeUser: {
-    // subscription: false,
-    // agreement: true,
-    // lastName: "Ерёменко",
-    // firstName: "Александр",
-    // patronymic: "Юрьевич",
-    // tel: "+77055720424",
-    // login: "sasha.eryomenko77@gmail.com",
-    // password: "121212",
-    // date: "0123-03-12",
-    // card: "",
-    // location: "Санкт-Петербург",
-    // policies: [],
-    // messages: [],
-    // bank: 0,
-  },
-  users: [
-    {
-        // subscription: false,
-        // agreement: true,
-        // lastName: "Ерёменко",
-        // firstName: "Александр",
-        // patronymic: "Юрьевич",
-        // tel: "+77055720424",
-        // login: "sasha.eryomenko77@gmail.com",
-        // password: "121212",
-        // date: "0123-03-12",
-        // card: "",
-        // location: "Город",
-        // policies: [],
-        // messages: [],
-        // bank: 0,
-    },
-  ],
+  activeUser: {},
+  users: [],
 };
 
 let userSlice = createSlice({
