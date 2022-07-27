@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
-  curSiteLocation: ["Главная", "Личный кабинет"],
   isLoggedIn: false,
   activeUser: {},
   users: [],
@@ -43,11 +42,6 @@ let userSlice = createSlice({
       }
       state.isLoggedIn = false;
       state.activeUser = {};
-    },
-    setCurSiteLocation: (state, action) => {
-      if (action.payload !== "") {
-        state.curSiteLocation[2] = action.payload;
-      } else state.curSiteLocation.splice(2, 1);
     },
     setLocation: (state, action) => {
       state.activeUser.location = action.payload;
@@ -107,7 +101,6 @@ export const {
   setActiveUser,
   checkLoggedIn,
   logoutUser,
-  setCurSiteLocation,
   setLocation,
   setPolicy,
   changeUserPassword,

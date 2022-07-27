@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
 import s from './Menu.module.css'
 import { useDispatch } from 'react-redux/es/exports'
-import { logoutUser, setCurSiteLocation } from '../../../../redux/slices/user-slice'
+import { logoutUser } from '../../../../redux/slices/user-slice'
 import { setShowLoading } from '../../../../redux/slices/loader-slice'
 
 const Menu = () => {
@@ -36,7 +36,6 @@ const Menu = () => {
               to={i.to}
               key={i.id}
               className={({ isActive }) => (isActive ? s.activeItem : "")}
-              onClick={() => dispatch(setCurSiteLocation(i.content))}
             >
               <img src={i.imgSrc} alt="item" />
               <span>{i.content}</span>
