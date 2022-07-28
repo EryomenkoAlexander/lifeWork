@@ -12,6 +12,10 @@
     align-items: stretch;
 }
 
+.wrapper > form > button {
+    margin-top: 30px;
+}
+
 .wrapper > form > button > img {
     width: 30px;
 }
