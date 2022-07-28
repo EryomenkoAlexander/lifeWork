@@ -4,9 +4,9 @@ import { useForm } from 'react-hook-form'
 import Input from '../../../snippets/input/Input'
 import Button from '../../../snippets/button/Button'
 import { addBank, setMessage } from '../../../../redux/slices/user-slice'
-import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
 import { useDispatch } from 'react-redux'
 import { setShowLoading } from '../../../../redux/slices/loader-slice'
+import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 const PaymentForm = ({payment}) => {
     const {
@@ -36,7 +36,10 @@ const PaymentForm = ({payment}) => {
       setTimeout(() => {
         dispatch(addBank(data.money));
         dispatch(setShowLoading(false));
-        dispatch(setShowPopup(true));
+        dispatch(setOpen({
+          type: 'success',
+          text: 'Баланс пополнен'
+        }))
         dispatch(
           setMessage({
             from: "Администрация",
@@ -45,9 +48,6 @@ const PaymentForm = ({payment}) => {
           })
         );
         reset();
-        setTimeout(() => {
-          dispatch(setShowPopup(false));
-        }, 2500);
       }, 1500);
     }
   };

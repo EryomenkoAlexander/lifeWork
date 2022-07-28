@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setActiveUser, setMessage } from "../../../redux/slices/user-slice";
 import { useEffect } from "react";
 import { setShowLoading } from "../../../redux/slices/loader-slice";
-import { setShowPopup } from "../../../redux/slices/loginFailPopup-slice";
+import { setClose, setOpen } from "../../../redux/slices/myAlert-slice";
 
 const LoginForm = (props) => {
   const {
@@ -18,7 +18,7 @@ const LoginForm = (props) => {
     formState: { errors },
   } = useForm({
     mode: "onBlur",
-  }); 
+  });
 
   let navigate = useNavigate();
   let dispatch = useDispatch();
@@ -26,11 +26,11 @@ const LoginForm = (props) => {
   let user = useSelector((state) => state.user);
 
   useEffect(() => {
-    dispatch(setShowPopup(false))
-  }, [])
+    dispatch(setClose());
+  }, []);
 
   const onSubmit = (data) => {
-    dispatch(setShowLoading(true))
+    dispatch(setShowLoading(true));
     let formComplete = false;
     let users = user.users;
 
@@ -48,14 +48,22 @@ const LoginForm = (props) => {
 
     if (formComplete) {
       setTimeout(() => {
-        dispatch(setShowLoading(false))
+        dispatch(
+          setOpen({
+            type: "success",
+            text: "Вход выполнен",
+          })
+        );
+        dispatch(setShowLoading(false));
         dispatch(setActiveUser(data.login));
-        dispatch(setMessage({
-          from: 'Администрация',
-          title: 'Авторизация',
-          text: `Вход успешно выполнен. С возвращением!`
-        }))
-        navigate("/cabinet", {replace: true});
+        dispatch(
+          setMessage({
+            from: "Администрация",
+            title: "Авторизация",
+            text: `Вход успешно выполнен. С возвращением!`,
+          })
+        );
+        navigate("/cabinet", { replace: true });
       }, 1500);
     } else {
       setTimeout(() => {
@@ -67,7 +75,7 @@ const LoginForm = (props) => {
           type: "loginError",
           message: "Неверный логин, попробуйте еще раз",
         });
-        dispatch(setShowLoading(false))
+        dispatch(setShowLoading(false));
       }, 1500);
     }
   };

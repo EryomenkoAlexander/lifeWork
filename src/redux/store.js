@@ -8,13 +8,10 @@ import loaderSlice from "./slices/loader-slice";
 import loginSlice from "./slices/login-slice";
 import mainCardsSlice from './slices/mainCard-slice'
 import newsSlice from "./slices/news-slice";
-import loginFailPopupSlice from "./slices/loginFailPopup-slice";
 import registrationSlice from "./slices/registration-slice";
 import typesInsuranceSlice from "./slices/typesInsurance-slice";
 import usefulButtonsSlice from "./slices/usefulButtons-slice";
 import userSlice from "./slices/user-slice";
-import successPopupSlice from "./slices/successPopup-slice";
-import failPopupSlice from "./slices/failPopup-slice";
 import myAlertSlice from "./slices/myAlert-slice";
 
 let store = configureStore({
@@ -31,10 +28,7 @@ let store = configureStore({
         registration: registrationSlice,
         user: userSlice,
         cabinet: cabinetSlice,
-        loginFailPopup: loginFailPopupSlice,
-        successPopup: successPopupSlice,
         loader: loaderSlice,
-        failPopup: failPopupSlice,
         myAlert: myAlertSlice,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({

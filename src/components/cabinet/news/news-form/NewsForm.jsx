@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { createNews } from "../../../../redux/slices/news-slice";
 import { setMessage } from "../../../../redux/slices/user-slice";
 import { useDispatch, useSelector } from "react-redux";
-import { setShowPopup } from "../../../../redux/slices/successPopup-slice";
+import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 const NewsForm = () => {
   const {
@@ -52,10 +52,10 @@ const NewsForm = () => {
       text: data.textNews,
       hashtags: [...hashtags],
     };
-    dispatch(setShowPopup(true))
-    setTimeout(() => {
-        dispatch(setShowPopup(false))
-    }, 2500)
+    dispatch(setOpen({
+      type: 'success',
+      text: 'Опубликовано'
+    }))
     dispatch(createNews(news));
     dispatch(
       setMessage({

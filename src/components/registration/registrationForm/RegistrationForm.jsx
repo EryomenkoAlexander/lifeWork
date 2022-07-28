@@ -7,6 +7,7 @@ import { setUser, setActiveUser, setMessage } from "../../../redux/slices/user-s
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { setShowLoading } from "../../../redux/slices/loader-slice";
+import { setOpen } from '../../../redux/slices/myAlert-slice'
 
 const RegistrationForm = (props) => {
     let steps = props.steps;
@@ -58,6 +59,12 @@ const RegistrationForm = (props) => {
           dispatch(setActiveUser(data.login))
           dispatch(setShowLoading(true))
           setTimeout(() => {
+            dispatch(
+              setOpen({
+                type: "success",
+                text: "Регистрация прошла",
+              })
+            );
             navigate('/cabinet', {replace: true})
             dispatch(setShowLoading(false))
             dispatch(setMessage({

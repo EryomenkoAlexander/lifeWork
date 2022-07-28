@@ -5,8 +5,8 @@ import { useForm } from 'react-hook-form'
 import Button from '../../../snippets/button/Button'
 import Input from '../../../snippets/input/Input'
 import { useSelector, useDispatch } from 'react-redux'
-import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
 import { setMessage } from '../../../../redux/slices/user-slice'
+import { setOpen } from '../../../../redux/slices/myAlert-slice'
 
 const AskQuestionForm = ({inputs}) => {
     let dispatch = useDispatch()
@@ -25,10 +25,10 @@ const AskQuestionForm = ({inputs}) => {
       });
 
       let onSubmit = (data) => {
-        dispatch(setShowPopup(true))
-        setTimeout(() => {
-            dispatch(setShowPopup(false))
-        }, 2500)
+        dispatch(setOpen({
+          type: 'success',
+          text: 'Отправлено'
+        }))
         dispatch(setMessage({
             from: 'Администрация',
             title: 'Вопрос',

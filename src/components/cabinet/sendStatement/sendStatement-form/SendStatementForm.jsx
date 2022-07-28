@@ -7,8 +7,8 @@ import Textarea from '../../../snippets/textarea/Textarea'
 import SelectList from '../../../snippets/select-list/SelectList';
 import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react';
-import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
 import { setMessage } from '../../../../redux/slices/user-slice'
+import { setOpen } from '../../../../redux/slices/myAlert-slice';
 
 const SendStatementForm = ({inputs}) => {
   let dispatch = useDispatch()
@@ -27,13 +27,13 @@ const SendStatementForm = ({inputs}) => {
         }
       });
 
-      let [policy, setPolicy] = useState('')
+      let [policy, setPolicy] = useState("")
     
       let onSubmit = (data) => {
-        dispatch(setShowPopup(true))
-        setTimeout(() => {
-            dispatch(setShowPopup(false))
-        }, 2500)
+        dispatch(setOpen({
+          type: 'success',
+          text: 'Отправлено'
+        }))
         dispatch(setMessage({
             from: 'Администрация',
             title: 'Завление',
@@ -60,7 +60,7 @@ const SendStatementForm = ({inputs}) => {
                     <div className={s.list}>
                       <SelectList
                         title={i.title}
-                        list={user.policies.map((i) => i.name)}
+                        list={user.policies && user.policies.map((i) => i.name)}
                         value={policy}
                         setValue={setPolicy}
                       />

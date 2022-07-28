@@ -7,7 +7,7 @@ import SelectList from "../../../snippets/select-list/SelectList";
 import RadioList from "../../../snippets/radio-list/RadioList";
 import Button from '../../../snippets/button/Button'
 import { useDispatch } from "react-redux";
-import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
+import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 const CalculateForm = ({ inputs }) => {
   const {
@@ -56,10 +56,10 @@ const CalculateForm = ({ inputs }) => {
         setCalcRes(res);
     }
     setCalcRes(Math.round(res));
-    dispatch(setShowPopup(true))
-    setTimeout(() => {
-      dispatch(setShowPopup(false))
-    }, 2500)
+    dispatch(setOpen({
+      type: 'success',
+      text: 'Результат готов'
+    }))
   };
 
   return (
