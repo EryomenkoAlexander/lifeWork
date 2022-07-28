@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import Textarea from "../../../snippets/textarea/Textarea";
 import Button from "../../../snippets/button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
 import { setMessage } from '../../../../redux/slices/user-slice'
+import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 
 const InsuredEventForm = ({ inputs }) => {
@@ -29,10 +29,10 @@ const InsuredEventForm = ({ inputs }) => {
   let dispatch = useDispatch()
 
   let onSubmit = (data) => {
-    dispatch(setShowPopup(true))
-    setTimeout(() => {
-        dispatch(setShowPopup(false))
-    }, 2500)
+    dispatch(setOpen({
+      type: 'success',
+      text: 'Отправлено'
+    }))
     dispatch(setMessage({
         from: 'Администрация',
         title: 'Страховой случай',

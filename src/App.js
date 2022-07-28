@@ -8,21 +8,17 @@ import Login from "./components/login/login-assembly/Login";
 import Registration from "./components/registration/registration-assembly/Registration";
 import Cabinet from "./components/cabinet/cabinet-assembly/Cabinet";
 import NotFound from "./components/not-found/NotFound";
-import LoginFailPopup from "./components/snippets/login-fail-popup/LoginFailPopup";
 import Loader from "./components/snippets/loader/Loader";
-import SuccessPopup from "./components/snippets/success-popup/SuccessPopup";
-import FailPopup from "./components/snippets/fail-popup/FailPopup";
+import MyAlert from "./components/snippets/alert/MyAlert";
 
 function App(props) {
   return (
     <div className="App">
       <Header />
       <main>
-        <LoginFailPopup />
-        <SuccessPopup />
-        <FailPopup />
         <Loader />
-        
+        <MyAlert />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />

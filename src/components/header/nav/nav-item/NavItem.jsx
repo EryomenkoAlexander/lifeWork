@@ -4,7 +4,7 @@ import NavItemList from "../nav-item-list/NavItemList";
 import s from './NavItem.module.css'
 import { useDispatch, useSelector } from "react-redux";
 import { setShowList } from "../../../../redux/slices/header-slice";
-import { setShowPopup } from "../../../../redux/slices/loginFailPopup-slice";
+import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 const NavItem = (props) => {
   let dispatch = useDispatch()
@@ -17,7 +17,10 @@ const NavItem = (props) => {
       if (isLoggedIn) {
         dispatch(setShowList(props.data.typeList))
       } else {
-        dispatch(setShowPopup(true))
+        dispatch(setOpen({
+          type: 'warning',
+          text: 'Выполните вход'
+        }))
       }
     } else {
       dispatch(setShowList(props.data.typeList))

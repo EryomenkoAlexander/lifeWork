@@ -4,6 +4,7 @@ import Message from '../message/Message'
 import s from './Messages.module.css'
 import Button2 from '../../../snippets/button_2/Button2'
 import { removeAllMessages } from '../../../../redux/slices/user-slice'
+import { setOpen } from '../../../../redux/slices/myAlert-slice'
 
 const Messages = () => {
   let dispatch = useDispatch()
@@ -11,11 +12,19 @@ const Messages = () => {
   let user = useSelector(state => state.user.activeUser)
   let messages = useSelector(state => state.cabinet.messages)
 
+  let removeMessages = () => {
+    dispatch(removeAllMessages())
+    dispatch(setOpen({
+      type: 'success',
+      text: 'Сообщения очищены'
+    }))
+  }
+  
   return (
     <div className={s.messages}>
       <h2>{messages.title}</h2>
       <div className={s.wrapper}>
-        {user.messages.length ? <Button2 onClick={() => dispatch(removeAllMessages())}>Удалить все</Button2> : ''}
+        {user.messages && user.messages.length ? <Button2 onClick={removeMessages}>Удалить все</Button2> : ''}
         <div>
         {user.messages &&
           (user.messages.length ? (

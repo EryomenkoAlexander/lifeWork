@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import s from './CheckAgent.module.css'
 import SearchIcon from '@mui/icons-material/Search';
-import { setShowPopup } from '../../../../redux/slices/successPopup-slice'
+import { setOpen } from '../../../../redux/slices/myAlert-slice';
 
 const CheckAgent = () => {
   let dispatch = useDispatch()
@@ -12,10 +12,10 @@ const CheckAgent = () => {
   
   let sendAgent = () => {
     if (!value.includes(' ') && value !== '') {
-      dispatch(setShowPopup(true))
-      setTimeout(() => {
-        dispatch(setShowPopup(false))
-      }, 2500)
+      dispatch(setOpen({
+        type: 'success',
+        text: 'Запрос отправлен'
+      }))
       setValue('')
     }
   }

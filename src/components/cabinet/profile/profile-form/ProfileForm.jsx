@@ -8,7 +8,7 @@ import Button2 from "../../../snippets/button_2/Button2";
 import { unlockFullName } from "../../../../redux/slices/cabinet-slice";
 import { changeTel, changeUserFullName, changeUserPassword, setLocation, setMessage } from "../../../../redux/slices/user-slice";
 import { useEffect } from "react";
-import { setShowPopup } from "../../../../redux/slices/successPopup-slice";
+import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 const ProfileForm = ({ user }) => {
   const {
@@ -88,7 +88,10 @@ const ProfileForm = ({ user }) => {
     }
 
     if (passwordComplete) {
-      dispatch(setShowPopup(true))
+      dispatch(setOpen({
+        type: 'success',
+        text: 'Пароль изменен'
+      }))
       dispatch(changeUserPassword(newPassword))
       dispatch(setMessage({
         from: 'Администрация',
@@ -96,9 +99,6 @@ const ProfileForm = ({ user }) => {
         text: 'Пароль успешно изменен.',
       }))
       reset()
-      setTimeout(() => {
-        dispatch(setShowPopup(false))
-      }, 2500)
     }
   }
 
@@ -153,15 +153,15 @@ const ProfileForm = ({ user }) => {
     }
 
     if (saveSuccess) {
-      dispatch(setShowPopup(true))
+      dispatch(setOpen({
+        type: 'success',
+        text: 'Данные обновлены'
+      }))
       dispatch(setMessage({
         from: 'Администрация',
         title: 'Профиль',
         text: 'Данные о пользователе обновлены.'
       }))
-      setTimeout(() => {
-        dispatch(setShowPopup(false))
-      }, 2500)
     }
   }
 

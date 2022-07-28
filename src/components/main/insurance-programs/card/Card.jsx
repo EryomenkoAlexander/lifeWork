@@ -2,8 +2,8 @@ import React from "react";
 import s from "./Card.module.css";
 import Button from "../../../snippets/button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { setShowPopup as setShowFailPopup} from "../../../../redux/slices/loginFailPopup-slice";
 import { useNavigate } from "react-router";
+import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 const Card = (props) => {
   let dispatch = useDispatch();
@@ -13,7 +13,10 @@ const Card = (props) => {
   let setProgramUser = (program) => {
     isLoggedIn
       ? navigate("/cabinet/programs")
-      : dispatch(setShowFailPopup(true));
+      : dispatch(setOpen({
+        type: 'warning',
+        text: 'Выполните вход'
+      }));
   };
 
   return (

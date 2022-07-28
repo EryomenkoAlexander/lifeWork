@@ -2,9 +2,8 @@ import React from "react";
 import s from "./Program.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setMessage, setPolicy } from "../../../../redux/slices/user-slice";
-import { setShowPopup as setSuccessPopup } from "../../../../redux/slices/successPopup-slice";
-import { setShowPopup as setFailPopup } from "../../../../redux/slices/failPopup-slice";
 import { setShowLoading } from "../../../../redux/slices/loader-slice";
+import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 const Program = ({ data }) => {
   let dispatch = useDispatch();
@@ -12,10 +11,12 @@ const Program = ({ data }) => {
   let bank = useSelector((state) => state.user.activeUser.bank);
 
   let checkRepeatProgram = (program) => {
-    for (let i = 0; i < policies.length; i++) {
-      let cur = policies[i];
-      if (cur.id === program.id) {
-        return false;
+    if (policies) {
+      for (let i = 0; i < policies.length; i++) {
+        let cur = policies[i];
+        if (cur.id === program.id) {
+          return false;
+        }
       }
     }
     return true;
@@ -35,10 +36,12 @@ const Program = ({ data }) => {
               text: `Покупка программы «${program.name}» прошла успешно. Со счета списано ${program.price} ₽.`,
             })
           );
-          dispatch(setSuccessPopup(true));
-          setTimeout(() => {
-            dispatch(setSuccessPopup(false));
-          }, 2500);
+          dispatch(
+            setOpen({
+              type: "success",
+              text: "Куплено",
+            })
+          );
         } else {
           dispatch(
             setMessage({
@@ -47,10 +50,12 @@ const Program = ({ data }) => {
               text: `Покупка программы «${program.name}» не удалась. Недостаточно средств на счету.`,
             })
           );
-          dispatch(setFailPopup(true));
-          setTimeout(() => {
-            dispatch(setFailPopup(false));
-          }, 2500);
+          dispatch(
+            setOpen({
+              type: "error",
+              text: "Недостаточно средств",
+            })
+          );
         }
       }, 1500);
     }

@@ -3,7 +3,7 @@ import Button from "../../../snippets/button/Button";
 import s from "./UsefulButtons.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { setShowPopup as setShowFailPopup } from '../../../../redux/slices/loginFailPopup-slice'
+import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 const UsefulButtons = (props) => {
   let navigate = useNavigate()
@@ -18,7 +18,10 @@ const UsefulButtons = (props) => {
       <div className="container">
         <div className={s.wrapper}>
           {usefulButtons.buttons.map((b) => (
-            <Button key={b.id} onClick={() => isLoggedIn ? navigate(b.route) : dispatch(setShowFailPopup(true))}>
+            <Button key={b.id} onClick={() => isLoggedIn ? navigate(b.route) : dispatch(setOpen({
+              type: 'warning',
+              text: 'Выполните вход'
+            }))}>
               {b.content.toUpperCase()}
             </Button>
           ))}

@@ -4,19 +4,19 @@ import { useEffect } from "react";
 
 const SelectList = ({ title, list, value, setValue }) => {
   useEffect(() => {
-    list.length && setValue(list[0]);
+    list && list.length && setValue(list[0]);
   }, []);
 
   return (
     <FormControl fullWidth>
       <InputLabel>{title}</InputLabel>
       <Select
-        disabled={list.length ? false : true}
+        disabled={list && list.length ? false : true}
         value={value}
         label={title}
         onChange={(e) => setValue(e.target.value)}
       >
-        {list.map((i) => (
+        {list && list.map((i) => (
           <MenuItem key={i} value={i}>
             {i}
           </MenuItem>
