@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 const MainCards = (props) => {
   let mainCards = useSelector(state => state.mainCards)
+  
     return (
       <div className={s.mainCards}>
         <div className="container">
