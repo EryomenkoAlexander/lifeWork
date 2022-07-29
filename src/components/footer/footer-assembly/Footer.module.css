@@ -29,15 +29,15 @@
     flex-wrap: wrap;
 }
 
-.nav > a {
+.nav > span {
     color: #fff;
     margin: 5px 0;
-    transition: all 0.2s;
+    padding: 5px;
+    cursor: pointer;
 }
 
-.nav > a:hover {
-    transition: all 0.2s;
-    color: #DDD0A4;
+.nav > span:hover {
+    color: rgb(255, 210, 80);
 }
 
 .contacts {

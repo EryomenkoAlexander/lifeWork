@@ -6,7 +6,7 @@ let initialState = {
         {
             id: Math.random(),
             typeService: 'Программа',
-            service: '«Здоровье»',
+            service: 'Здоровье',
             imgSrc: '/imgs/insurancePrograms/health.svg',
             btnContent: 'Купить',
             infoProgram: [

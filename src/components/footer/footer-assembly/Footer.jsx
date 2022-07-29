@@ -1,11 +1,31 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import s from "./Footer.module.css";
 import Button from "../../snippets/button/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import { setOpen } from "../../../redux/slices/myAlert-slice";
 
 const Footer = (props) => {
-  let footer = useSelector(state => state.footer)
+  let footer = useSelector((state) => state.footer);
+  let isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  let navigate = useNavigate();
+  let dispatch = useDispatch();
+
+  let getRoute = (path) => {
+    if (path === '/') {
+      navigate(path)
+    } else {
+      isLoggedIn
+        ? navigate(path)
+        : dispatch(
+            setOpen({
+              type: "warning",
+              text: "Выполните вход",
+            })
+          );
+    }
+  }
+
   return (
     <div className={s.footer}>
       <div className={s.wrapper}>
@@ -13,10 +33,10 @@ const Footer = (props) => {
           <div className="container">
             <div className={s.infoWrapper}>
               <div className={s.nav}>
-                {footer.nav.map((n) => (
-                  <NavLink to="/" key={n.id}>
-                    {n.content}
-                  </NavLink>
+                {footer.nav.map((i) => (
+                  <span key={i.id} onClick={() => getRoute(i.to)}>
+                    {i.content}
+                  </span>
                 ))}
               </div>
 
@@ -39,8 +59,8 @@ const Footer = (props) => {
                   </div>
 
                   <div className={s.socialNetwork}>
-                    {footer.socialNetwork.map((sn) => (
-                      <img src={sn.imgSrc} alt="social-network" key={sn.id} />
+                    {footer.socialNetwork.map((i) => (
+                      <img src={i.imgSrc} alt="social-network" key={i.id} />
                     ))}
                   </div>
                 </div>

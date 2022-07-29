@@ -2,21 +2,63 @@ import React from "react";
 import s from "./Card.module.css";
 import Button from "../../../snippets/button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router";
 import { setOpen } from "../../../../redux/slices/myAlert-slice";
+import { setMessage, setPolicy } from "../../../../redux/slices/user-slice";
+import { setShowLoading } from "../../../../redux/slices/loader-slice";
 
 const Card = (props) => {
   let dispatch = useDispatch();
-  let navigate = useNavigate()
   let isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  let programs = useSelector((state) => state.cabinet.programs.items);
+  let bank = useSelector((state) => state.user.activeUser.bank);
 
-  let setProgramUser = (program) => {
-    isLoggedIn
-      ? navigate("/cabinet/programs")
-      : dispatch(setOpen({
-        type: 'warning',
-        text: 'Выполните вход'
-      }));
+  let buyProgram = (name) => {
+    if (isLoggedIn) {
+      dispatch(setShowLoading(true));
+      setTimeout(() => {
+        let program = programs.find(
+          (i) => i.name.toLowerCase() === name.toLowerCase()
+        );
+        if (bank >= program.price) {
+          dispatch(setPolicy(program));
+          dispatch(
+            setMessage({
+              from: "Администрация",
+              title: "Покупка",
+              text: `Покупка программы «${program.name}» прошла успешно. Со счета списано ${program.price} ₽.`,
+            })
+          );
+          dispatch(
+            setOpen({
+              type: "success",
+              text: "Куплено",
+            })
+          );
+        } else {
+          dispatch(
+            setMessage({
+              from: "Администрация",
+              title: "Покупка",
+              text: `Покупка программы «${program.name}» не удалась. Недостаточно средств на счету.`,
+            })
+          );
+          dispatch(
+            setOpen({
+              type: "error",
+              text: "Недостаточно средств",
+            })
+          );
+        }
+        dispatch(setShowLoading(false));
+      }, 1500);
+    } else {
+      dispatch(
+        setOpen({
+          type: "warning",
+          text: "Выполните вход",
+        })
+      );
+    }
   };
 
   return (
@@ -31,7 +73,7 @@ const Card = (props) => {
               ""
             )}
           </div>
-          <h3>{props.data.service.toUpperCase()}</h3>
+          <h3>«{props.data.service.toUpperCase()}»</h3>
           <img src={props.data.imgSrc} alt="health" />
         </div>
 
@@ -55,7 +97,7 @@ const Card = (props) => {
             </div>
           ))}
           <div className={s.btn}>
-            <Button onClick={() => setProgramUser(props.data)}>
+            <Button onClick={() => buyProgram(props.data.service)}>
               {props.data.btnContent.toUpperCase()}
             </Button>
           </div>
