@@ -26,6 +26,10 @@ const Footer = (props) => {
     }
   }
 
+  let goToOffice = () => {
+    window.open(footer.locationOffice, '_blank');
+  };
+
   return (
     <div className={s.footer}>
       <div className={s.wrapper}>
@@ -44,7 +48,7 @@ const Footer = (props) => {
                 <div className={s.location}>
                   <span>{footer.locationInfo}</span>
                   <div>
-                    <Button>{footer.btnContent.toUpperCase()}</Button>
+                    <Button onClick={goToOffice}>{footer.btnContent.toUpperCase()}</Button>
                   </div>
                 </div>
 

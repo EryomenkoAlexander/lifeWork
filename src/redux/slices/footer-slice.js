@@ -24,6 +24,7 @@ let initialState = {
       Сб-Вс выходной
       `,
     btnContent: "Как добраться",
+    locationOffice: 'https://goo.gl/maps/h8KVXonCYN4kebneA',
     contacts: [
       {
         id: Math.random(),
