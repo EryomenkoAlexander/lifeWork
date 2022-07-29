@@ -2,18 +2,18 @@ import { createSlice } from "@reduxjs/toolkit"
 
 let initialState = {
     nav: [
-      { id: Math.random(), content: "Главная" },
-      { id: Math.random(), content: "О нас" },
-      { id: Math.random(), content: "Новости" },
-      { id: Math.random(), content: "Спецпредложения" },
-      { id: Math.random(), content: "Бизнес предложения" },
-      { id: Math.random(), content: "Твое будущее" },
-      { id: Math.random(), content: "Защита себя и близких" },
-      { id: Math.random(), content: "Защита сотрудников" },
-      { id: Math.random(), content: "Страховая документация" },
-      { id: Math.random(), content: "Финансовые показатели" },
-      { id: Math.random(), content: "Контакты" },
-      { id: Math.random(), content: "Карта сайта" },
+      { id: Math.random(), content: "Главная", to: '/' },
+      { id: Math.random(), content: "О нас", to: '/' },
+      { id: Math.random(), content: "Новости", to: '/' },
+      { id: Math.random(), content: "Спецпредложения", to: '/cabinet' },
+      { id: Math.random(), content: "Бизнес предложения", to: '/cabinet' },
+      { id: Math.random(), content: "Твое будущее", to: '/cabinet/programs' },
+      { id: Math.random(), content: "Защита себя и близких", to: '/cabinet/programs' },
+      { id: Math.random(), content: "Защита сотрудников", to: '/cabinet/programs' },
+      { id: Math.random(), content: "Страховая документация", to: '/cabinet/archives' },
+      { id: Math.random(), content: "Финансовые показатели", to: '/cabinet/payment' },
+      { id: Math.random(), content: "Контакты", to: '/' },
+      { id: Math.random(), content: "Карта сайта", to: '/' },
     ],
     locationInfo: `
       График работы главного офиса
@@ -24,6 +24,7 @@ let initialState = {
       Сб-Вс выходной
       `,
     btnContent: "Как добраться",
+    locationOffice: 'https://goo.gl/maps/h8KVXonCYN4kebneA',
     contacts: [
       {
         id: Math.random(),

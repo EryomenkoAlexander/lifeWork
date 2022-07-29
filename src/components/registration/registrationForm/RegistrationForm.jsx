@@ -118,7 +118,6 @@ const RegistrationForm = (props) => {
               </div>
             </div>
 
-            <div>
               <div className={s.step_4}>
                 {steps.step_4.map((i) => (
                   <label
@@ -137,7 +136,6 @@ const RegistrationForm = (props) => {
                   </label>
                 ))}
               </div>
-            </div>
 
             <Button>{props.btnContent}</Button>
           </form>

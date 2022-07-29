@@ -11,6 +11,14 @@
     align-items: center;
 }
 
+.wrapper > form > button {
+    font-weight: 500;
+}
+
+.wrapper > form > div > div > * {
+    color: #0D1C41;
+}
+
 .main {
     display: flex;
     justify-content: space-between;
@@ -19,10 +27,6 @@
 
 .main label {
     margin: 25px 0;
-}
-
-.wrapper > form > div > div > * {
-    color: #0D1C41;
 }
 
 .step_1 {
