@@ -9,6 +9,7 @@ import { createNews } from "../../../../redux/slices/news-slice";
 import { setMessage } from "../../../../redux/slices/user-slice";
 import { useDispatch, useSelector } from "react-redux";
 import { setOpen } from "../../../../redux/slices/myAlert-slice";
+import Hashtags from "../hashtags/Hashtags";
 
 const NewsForm = () => {
   const {
@@ -95,30 +96,7 @@ const NewsForm = () => {
           </div>
 
           <div>
-            <div className={s.hashtags}>
-              <h5>Хештеги:</h5>
-              <div>
-                {hashtags.length > 0 ? (
-                  hashtags.map((h) => (
-                    <div
-                      key={h.id}
-                      className={s.hashtag}
-                      onClick={() => removeHashtag(h)}
-                    >
-                      {h.value.toUpperCase()}
-                    </div>
-                  ))
-                ) : (
-                  <div className={s.plugs}>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                )}
-              </div>
-              <span>{hashtags.length >= 4 && "Достигнут максимум"}</span>
-            </div>
+            <Hashtags hashtags={hashtags} removeHashtag={removeHashtag} />
             <Button>
               Создать
               <img src="/imgs/news/createNews.png" alt="news" />
