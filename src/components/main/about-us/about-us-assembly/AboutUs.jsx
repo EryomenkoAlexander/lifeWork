@@ -4,7 +4,7 @@ import s from "./AboutUs.module.css";
 import { useSelector } from "react-redux";
 
 const AboutUs = () => {
-  let aboutUs = useSelector((state) => state.aboutUs);
+  let aboutUs = useSelector((state) => state.home.aboutUs);
   return (
     <div className={s.aboutUs}>
       <h2 className={s.title}>{aboutUs.title.toUpperCase()}</h2>

@@ -5,7 +5,7 @@ import NewsForm from "../news-form/NewsForm";
 import s from "./News.module.css";
 
 const News = () => {
-  let news = useSelector((state) => state.news);
+  let news = useSelector((state) => state.home.news);
 
   return (
     <div className={s.news}>

@@ -10,7 +10,7 @@ const UsefulButtons = () => {
   let dispatch = useDispatch();
 
   let isLoggedIn = useSelector((state) => state.user.isLoggedIn);
-  let usefulButtons = useSelector((state) => state.usefulButtons);
+  let usefulButtons = useSelector((state) => state.home.usefulButtons);
 
   let handleClick = (path) => {
     isLoggedIn
