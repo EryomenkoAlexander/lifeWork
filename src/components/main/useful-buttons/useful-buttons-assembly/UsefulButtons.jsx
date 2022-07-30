@@ -26,14 +26,12 @@ const UsefulButtons = () => {
   return (
     <div className={s.usefulButtons}>
       <h2>{usefulButtons.title.toUpperCase()}</h2>
-      <div className="container">
-        <div className={s.wrapper}>
-          {usefulButtons.buttons.map((b) => (
-            <Button key={b.id} onClick={() => handleClick(b.route)}>
-              {b.content.toUpperCase()}
-            </Button>
-          ))}
-        </div>
+      <div className={s.wrapper}>
+        {usefulButtons.buttons.map((b) => (
+          <Button key={b.id} onClick={() => handleClick(b.route)}>
+            {b.content.toUpperCase()}
+          </Button>
+        ))}
       </div>
     </div>
   );

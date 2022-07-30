@@ -8,12 +8,10 @@ const MainCards = () => {
   
     return (
       <div className={s.mainCards}>
-        <div className="container">
-          <div className={s.wrapper}>
-            {mainCards.cards.map((c) => (
-              <Card data={c} key={c.id} />
-            ))}
-          </div>
+        <div className={s.wrapper}>
+          {mainCards.cards.map((c) => (
+            <Card data={c} key={c.id} />
+          ))}
         </div>
       </div>
     );

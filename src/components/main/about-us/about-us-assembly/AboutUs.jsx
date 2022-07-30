@@ -8,18 +8,16 @@ const AboutUs = () => {
   return (
     <div className={s.aboutUs}>
       <h2 className={s.title}>{aboutUs.title.toUpperCase()}</h2>
-      <div className="container">
-        <div className={s.wrapper}>
-          <div className={s.items}>
-            {aboutUs.items.map((i) => (
-              <Item key={i.id} data={i} />
-            ))}
-          </div>
-          <div className={s.companies}>
-            {aboutUs.companies.map((c) => (
-              <img src={c.imgSrc} alt="company" key={c.id} />
-            ))}
-          </div>
+      <div className={s.wrapper}>
+        <div className={s.items}>
+          {aboutUs.items.map((i) => (
+            <Item key={i.id} data={i} />
+          ))}
+        </div>
+        <div className={s.companies}>
+          {aboutUs.companies.map((c) => (
+            <img src={c.imgSrc} alt="company" key={c.id} />
+          ))}
         </div>
       </div>
     </div>

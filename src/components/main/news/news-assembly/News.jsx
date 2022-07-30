@@ -11,32 +11,27 @@ const News = () => {
     return (
       <div className={s.news}>
         <h2>{news.title.toUpperCase()}</h2>
-        <div className="container">
-          <div className={s.wrapper}>
-            {!news.items.length ? (
-              <div className={s.plug}>
-                <h3>Актуальных новостей нет</h3>
+        <div className={s.wrapper}>
+          {!news.items.length ? (
+            <div className={s.plug}>
+              <h3>Актуальных новостей нет</h3>
+            </div>
+          ) : (
+            <>
+              <div className={s.cards}>
+                {lastNews.map((c) => (
+                  <Card data={c} key={c.id} />
+                ))}
               </div>
-            ) : (
-              <>
-                <div className={s.cards}>
-                  {lastNews.map((c) => (
-                    <Card data={c} key={c.id} />
-                  ))}
-                </div>
 
-                <div className={s.btn}>
-                  <Button>
-                    Смотреть все
-                    <img
-                      src="/imgs/snippets/arrow-right.png"
-                      alt="arrow-right"
-                    />
-                  </Button>
-                </div>
-              </>
-            )}
-          </div>
+              <div className={s.btn}>
+                <Button>
+                  Смотреть все
+                  <img src="/imgs/snippets/arrow-right.png" alt="arrow-right" />
+                </Button>
+              </div>
+            </>
+          )}
         </div>
       </div>
     );

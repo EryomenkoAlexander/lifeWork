@@ -70,7 +70,6 @@ const Cabinet = () => {
 
   return (
     <div className={s.cabinet}>
-      <div className="container">
         <div className={s.wrapper}>
           <div className={s.menu}>
             <NavLink to="/cabinet" className={s.title}>
@@ -92,7 +91,6 @@ const Cabinet = () => {
             </Routes>
           </div>
         </div>
-      </div>
     </div>
   );
 };
