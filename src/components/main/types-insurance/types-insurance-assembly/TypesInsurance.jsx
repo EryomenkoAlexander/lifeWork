@@ -4,7 +4,7 @@ import s from "./TypesInsurance.module.css";
 import { useSelector } from "react-redux";
 
 const TypesInsurance = () => {
-  let typesInsurance = useSelector((state) => state.typesInsurance);
+  let typesInsurance = useSelector((state) => state.home.typesInsurance);
   return (
     <div className={s.typesInsurance}>
       <div className="container">

@@ -5,8 +5,7 @@ import Card from '../card/Card'
 import { useSelector } from "react-redux";
 
 const News = () => {
-    let news = useSelector(state => state.news)
-
+    let news = useSelector(state => state.home.news)
     let lastNews = news.items.slice(-3).reverse();
 
     return (

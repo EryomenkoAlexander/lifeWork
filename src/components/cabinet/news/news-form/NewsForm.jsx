@@ -5,11 +5,11 @@ import Textarea from "../../../snippets/textarea/Textarea";
 import Input from "../../../snippets/input/Input";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { createNews } from "../../../../redux/slices/news-slice";
 import { setMessage } from "../../../../redux/slices/user-slice";
 import { useDispatch, useSelector } from "react-redux";
 import { setOpen } from "../../../../redux/slices/myAlert-slice";
 import Hashtags from "../hashtags/Hashtags";
+import { createNews } from '../../../../redux/slices/home-slice'
 
 const NewsForm = () => {
   const {

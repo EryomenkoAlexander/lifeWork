@@ -4,7 +4,7 @@ import s from './MainCards.module.css'
 import { useSelector } from "react-redux";
 
 const MainCards = () => {
-  let mainCards = useSelector(state => state.mainCards)
+  let mainCards = useSelector(state => state.home.mainCards)
   
     return (
       <div className={s.mainCards}>
