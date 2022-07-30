@@ -1,0 +1,30 @@
+.registrationForm {
+    box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.wrapper > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper > form > button {
+    font-weight: 500;
+}
+
+.wrapper > form > div > div > * {
+    color: #0D1C41;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main label {
+    margin: 25px 0;
+}

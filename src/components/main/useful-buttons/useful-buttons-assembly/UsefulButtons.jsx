@@ -6,11 +6,22 @@ import { useNavigate } from "react-router";
 import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
 const UsefulButtons = (props) => {
-  let navigate = useNavigate()
-  let dispatch = useDispatch()
+  let navigate = useNavigate();
+  let dispatch = useDispatch();
 
-  let isLoggedIn = useSelector(state => state.user.isLoggedIn)
+  let isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   let usefulButtons = useSelector((state) => state.usefulButtons);
+
+  let handleClick = (path) => {
+    isLoggedIn
+      ? navigate(path)
+      : dispatch(
+          setOpen({
+            type: "warning",
+            text: "Выполните вход",
+          })
+        );
+  }
 
   return (
     <div className={s.usefulButtons}>
@@ -18,10 +29,7 @@ const UsefulButtons = (props) => {
       <div className="container">
         <div className={s.wrapper}>
           {usefulButtons.buttons.map((b) => (
-            <Button key={b.id} onClick={() => isLoggedIn ? navigate(b.route) : dispatch(setOpen({
-              type: 'warning',
-              text: 'Выполните вход'
-            }))}>
+            <Button key={b.id} onClick={() => handleClick(b.route)}>
               {b.content.toUpperCase()}
             </Button>
           ))}
