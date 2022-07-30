@@ -32,7 +32,12 @@ const CheckAgent = () => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <SearchIcon className={s.icon} fontSize='large' color='primary' onClick={sendAgent} />
+          <SearchIcon
+            className={s.icon}
+            fontSize="large"
+            color="primary"
+            onClick={sendAgent}
+          />
         </div>
       </div>
     </div>

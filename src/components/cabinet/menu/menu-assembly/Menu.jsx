@@ -1,18 +1,17 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import s from './Menu.module.css'
 import { useDispatch } from 'react-redux/es/exports'
 import { logoutUser } from '../../../../redux/slices/user-slice'
 import { setShowLoading } from '../../../../redux/slices/loader-slice'
+import Items from '../items/Items'
 
 const Menu = () => {
     let dispatch = useDispatch()
     let navigate = useNavigate()
 
-    let menu = useSelector(state => state.cabinet.menu)
     let activeUser = useSelector(state => state.user.activeUser)
-    let isLoggedIn = useSelector(state => state.user.isLoggedIn)
 
   let logout = () => {
     dispatch(setShowLoading(true))
@@ -30,28 +29,7 @@ const Menu = () => {
           <img src="/imgs/cabinet/menu/logout.svg" alt="human" />
           <span>Выход</span>
         </div>
-        <div className={s.items}>
-          {menu.items.map((i) => (
-            <NavLink
-              to={i.to}
-              key={i.id}
-              className={({ isActive }) => (isActive ? s.activeItem : "")}
-            >
-              <img src={i.imgSrc} alt="item" />
-              <span>{i.content}</span>
-
-              {isLoggedIn &&
-                (activeUser.messages.length
-                  ? i.to === "messages" && <div className={s.dot}></div>
-                  : "")}
-
-              {isLoggedIn &&
-                (activeUser.policies.length
-                  ? i.to === "policies" && <div className={s.dot}></div>
-                  : "")}
-            </NavLink>
-          ))}
-        </div>
+        <Items />
       </div>
     </div>
   );
