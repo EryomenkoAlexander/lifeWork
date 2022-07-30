@@ -48,7 +48,7 @@ const InsuredEventForm = ({ inputs }) => {
           <div>
             {inputs.map((i) =>
               i.type === "textarea" ? (
-                <Textarea data={i} errors={errors} register={register} />
+                <Textarea key={i.id} data={i} errors={errors} register={register} />
               ) : (
                 <Input
                   key={i.id}
