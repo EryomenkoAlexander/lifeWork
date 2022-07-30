@@ -1,0 +1,62 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.wrapper > div {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.location > span {
+    color: #939CA6;
+}
+
+.contactsItems {
+    color: #fff;
+}
+
+.contactsItems > div {
+    margin-bottom: 40px;
+}
+
+.contactsItems > div > div {
+    font-size: 14px;
+}
+
+.contactsItems > div > strong {
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.7;
+}
+
+.contactsItems > div > strong:hover {
+    transition: all 0.2s;
+    opacity: 1;
+}
+
+.socialNetwork {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialNetwork > img {
+    margin-right: 20px;
+    transition: all 0.2s;
+}
+
+.socialNetwork > img:hover {
+    transform: scale(1.2);
+    transition: all 0.2s;
+}
