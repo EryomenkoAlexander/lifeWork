@@ -1,0 +1,25 @@
+.wrapper {
+    margin-right: 70px;
+}
+
+.wrapper div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.wrapper div img {
+    margin-left: 10px;
+}
+
+.wrapper div h4 {
+    font-weight: 400;
+}
+
+.wrapper h3 {
+    font-size: 26px;
+}
+
+.wrapper > img {
+    margin-top: 30%;
+}

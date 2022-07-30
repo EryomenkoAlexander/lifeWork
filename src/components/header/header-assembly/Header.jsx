@@ -12,9 +12,7 @@ const Header = () => {
         <div className="container">
           <div className={s.headerInner}>
             <Logo />
-            <nav>
-              <Nav />
-            </nav>
+            <Nav />
             <span className={s.number}>{number}</span>
             <Cabinet />
           </div>
