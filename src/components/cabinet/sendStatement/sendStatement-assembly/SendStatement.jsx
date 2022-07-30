@@ -23,7 +23,6 @@ const SendStatement = () => {
             onChange={handleChange}
             textColor="primary"
             indicatorColor="primary"
-            aria-label="secondary tabs example"
           >
             <Tab value="online" label="Онлайн" />
             <Tab value="offline" label="Офлайн" />

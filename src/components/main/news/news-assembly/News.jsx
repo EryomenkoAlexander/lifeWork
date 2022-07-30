@@ -13,7 +13,6 @@ const News = (props) => {
       <div className={s.news}>
         <h2>{news.title.toUpperCase()}</h2>
         <div className="container">
-          :
           <div className={s.wrapper}>
             {!news.items.length ? (
               <div className={s.plug}>

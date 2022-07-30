@@ -1,14 +1,16 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import s from "./ProfileForm.module.css";
-import Input from "../../../snippets/input/Input";
 import { useForm } from "react-hook-form";
 import Button from "../../../snippets/button/Button";
-import Button2 from "../../../snippets/button_2/Button2";
 import { unlockFullName } from "../../../../redux/slices/cabinet-slice";
-import { changeTel, changeUserFullName, changeUserPassword, setLocation, setMessage } from "../../../../redux/slices/user-slice";
+import { changeTel, changeUserFullName, setLocation, setMessage } from "../../../../redux/slices/user-slice";
 import { useEffect } from "react";
 import { setOpen } from "../../../../redux/slices/myAlert-slice";
+import Step1 from "../steps/step-1/Step1";
+import Step2 from "../steps/step-2/Step2";
+import Step3 from "../steps/step-3/Step3";
+import Step4 from "../steps/step-4/Step4";
 
 const ProfileForm = ({ user }) => {
   const {
@@ -36,71 +38,6 @@ const ProfileForm = ({ user }) => {
   let dispatch = useDispatch()
   let info = useSelector((state) => state.cabinet.profile.info);
   let users = useSelector(state => state.user.users)
-
-  let changeFullName = (e) => {
-    e.preventDefault()
-    dispatch(unlockFullName(true))
-    dispatch(setMessage({
-      from: 'Администрация', 
-      title: 'Изменение ФИО',
-      text: 'Запрос на изменение ФИО одобрен.'
-    }))
-  }
-
-  let changePassword = (e) => {
-    e.preventDefault()
-    let passwordComplete = true;
-
-    let curPassword = getValues('curPassword')
-    let newPassword = getValues('newPassword')
-    let repeatPassword = getValues('repeatPassword')
-
-    if (!curPassword.length) {
-      passwordComplete = false;
-      setError('curPassword', {
-        type: 'required',
-        message: 'Введите текущий пароль'
-      }, { shouldFocus: true })
-    } else {
-      if (user.password !== curPassword) {
-        passwordComplete = false;
-        setError('curPassword', {
-          type: 'incorrectPassword',
-          message: 'Неверный пароль'
-        }, { shouldFocus: true })
-      }
-    }
-
-    if (!newPassword.length) {
-      passwordComplete = false;
-      setError('newPassword', {
-        type: 'required',
-        message: 'Введите новый пароль'
-      }, { shouldFocus: true })
-    }
-
-    if (newPassword !== repeatPassword) {
-      passwordComplete = false;
-      setError('repeatPassword', {
-        type: 'differentPasswords',
-        message: 'Пароли не совпадают'
-      }, { shouldFocus: true })
-    }
-
-    if (passwordComplete) {
-      dispatch(setOpen({
-        type: 'success',
-        text: 'Пароль изменен'
-      }))
-      dispatch(changeUserPassword(newPassword))
-      dispatch(setMessage({
-        from: 'Администрация',
-        title: 'Изменение пароля',
-        text: 'Пароль успешно изменен.',
-      }))
-      reset()
-    }
-  }
 
   let onSubmit = (data) => {
     let saveSuccess = true;
@@ -170,56 +107,25 @@ const ProfileForm = ({ user }) => {
       <div className={s.wrapper}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <div className={s.step_1}>
-              {info.step_1.map((i) => (
-                <Input
-                  key={i.id}
-                  data={i}
-                  register={register}
-                  errors={errors} 
-                />
-              ))}
-              <span className={s.remark}>{info.remark}</span>
-              <Button2 onClick={(e) => changeFullName(e)}>
-                Отправить запрос
-              </Button2>
-            </div>
-            <div className={s.step_2}>
-              {info.step_2.map((i) => (
-                <Input
-                  key={i.id}
-                  data={i}
-                  register={register}
-                  errors={errors}
-                />
-              ))}
-            </div>
+            <Step1
+              step_1={info.step_1}
+              remark={info.remark}
+              register={register}
+              errors={errors}
+            />
+            <Step2 step_2={info.step_2} register={register} errors={errors} />
           </div>
 
           <div>
-            <div className={s.step_3}>
-              {info.step_3.map((i) => (
-                <Input
-                  key={i.id}
-                  data={i}
-                  register={register}
-                  errors={errors}
-                />
-              ))}
-            </div>
-            <div className={s.step_4}>
-              {info.step_4.map((i) => (
-                <Input
-                  key={i.id}
-                  data={i}
-                  register={register}
-                  errors={errors}
-                />
-              ))}
-              <Button2 onClick={(e) => changePassword(e)}>
-                Изменить пароль
-              </Button2>
-            </div>
+            <Step3 step_3={info.step_3} register={register} errors={errors} />
+            <Step4
+              step_4={info.step_4}
+              register={register}
+              errors={errors}
+              setError={setError}
+              reset={reset}
+              getValues={getValues}
+            />
             <Button>Сохранить изменения</Button>
           </div>
         </form>

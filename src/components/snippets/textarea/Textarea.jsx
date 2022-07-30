@@ -26,16 +26,14 @@ const Textarea = ({data, errors, register}) => {
 
   return (
     <label
-      className={[s.wrapper, getError(data.name, errors) && s.error].join(
-        " "
-      )}
+      className={[s.wrapper, getError(data.name, errors) && s.error].join(" ")}
     >
       <h4>{data.title}</h4>
       <div>
-      <textarea
-        placeholder={data.placeholder}
-        {...register(data.name, getOptions(data.options))}
-      ></textarea>
+        <textarea
+          placeholder={data.placeholder}
+          {...register(data.name, getOptions(data.options))}
+        ></textarea>
       </div>
       <span>{getError(data.name, errors) || "⁣"}</span>
     </label>

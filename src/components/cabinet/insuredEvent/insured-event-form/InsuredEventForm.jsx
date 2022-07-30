@@ -22,8 +22,8 @@ const InsuredEventForm = ({ inputs }) => {
     defaultValues: {
       firstName: user.firstName,
       tel: user.tel,
-      email: user.login
-    }
+      email: user.login,
+    },
   });
 
   let dispatch = useDispatch()

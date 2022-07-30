@@ -1,0 +1,46 @@
+.step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 100px 0 40px;
+}
+
+.wrapper > label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 7px 0;
+    font-weight: 500;
+    position: relative;
+}
+
+.wrapper > label:hover {
+    text-decoration: underline;
+}
+
+.wrapper > label > input {
+    margin-left: 14px;
+    width: 18px;
+    height: 18px;
+}
+
+.wrapper > label > input::after {
+    content: url('/imgs/snippets/checked-false.svg');
+}
+
+.wrapper > label > input:checked::after {
+    content: url('/imgs/snippets/checked-true.svg');
+    background: #fff;
+}
+
+.error::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #DC0000;
+    border-radius: 50%;
+    position: absolute;
+    left: -5%;
+    top: 25%;
+}

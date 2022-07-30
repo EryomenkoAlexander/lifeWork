@@ -72,7 +72,12 @@ const CalculateForm = ({ inputs }) => {
                 {i.list ? (
                   i.type === "radio" ? (
                     <div className={s.list}>
-                      <RadioList data={i} value={gender} setValue={setGender} />
+                      <RadioList
+                        title={i.title}
+                        list={i.list}
+                        value={gender}
+                        setValue={setGender}
+                      />
                     </div>
                   ) : (
                     <div className={s.list}>

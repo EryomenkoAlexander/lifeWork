@@ -7,8 +7,6 @@ const Policies = () => {
     <div className={s.policies}>
       <div className={s.wrapper}>
         <ActivePolicies />
-        <div className={s.docs}>
-        </div>
       </div>
     </div>
   );

@@ -5,15 +5,15 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-const RadioList = ({data, setValue}) => {
+const RadioList = ({title, list, setValue}) => {
   return (
     <FormControl>
-      <FormLabel>{data.title}</FormLabel>
+      <FormLabel>{title}</FormLabel>
       <RadioGroup
-        defaultValue={data.list[0]}
+        defaultValue={list[0]}
         onChange={(e) => setValue(e.target.value)}
       >
-        {data.list.map((i) => (
+        {list.map((i) => (
           <FormControlLabel key={i} value={i} control={<Radio />} label={i} />
         ))}
       </RadioGroup>
