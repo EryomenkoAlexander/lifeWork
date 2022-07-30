@@ -16,11 +16,12 @@ const SelectList = ({ title, list, value, setValue }) => {
         label={title}
         onChange={(e) => setValue(e.target.value)}
       >
-        {list && list.map((i) => (
-          <MenuItem key={i} value={i}>
-            {i}
-          </MenuItem>
-        ))}
+        {list &&
+          list.map((i) => (
+            <MenuItem key={i} value={i}>
+              {i}
+            </MenuItem>
+          ))}
       </Select>
     </FormControl>
   );
