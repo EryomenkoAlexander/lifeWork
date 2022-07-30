@@ -3,7 +3,7 @@ import NavItem from '../nav-item/NavItem'
 import s from './Nav.module.css'
 import { useSelector } from "react-redux";
 
-const Nav = (props) => {
+const Nav = () => {
   let nav = useSelector(state => state.header.nav)
 
     let elNav = [];

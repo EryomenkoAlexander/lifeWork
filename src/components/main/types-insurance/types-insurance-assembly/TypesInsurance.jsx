@@ -3,7 +3,7 @@ import Card from "../card/Card";
 import s from "./TypesInsurance.module.css";
 import { useSelector } from "react-redux";
 
-const TypesInsurance = (props) => {
+const TypesInsurance = () => {
   let typesInsurance = useSelector((state) => state.typesInsurance);
   return (
     <div className={s.typesInsurance}>

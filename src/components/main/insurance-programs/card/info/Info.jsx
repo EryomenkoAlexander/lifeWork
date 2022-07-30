@@ -6,7 +6,7 @@ import { setOpen } from "../../../../../redux/slices/myAlert-slice";
 import { setMessage, setPolicy } from "../../../../../redux/slices/user-slice";
 import { setShowLoading } from "../../../../../redux/slices/loader-slice";
 
-const Info = (props) => {
+const Info = ({data}) => {
   let dispatch = useDispatch();
   let isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   let programs = useSelector((state) => state.cabinet.programs.items);
@@ -64,7 +64,7 @@ const Info = (props) => {
   return (
     <div className={s.info}>
       <div className={s.wrapper}>
-        {props.data.infoProgram.map((ip) => (
+        {data.infoProgram.map((ip) => (
           <div key={ip.id}>
             <span>
               <strong className={s.beforeContent}>{ip.beforeContent}</strong>
@@ -83,8 +83,8 @@ const Info = (props) => {
           </div>
         ))}
         <div className={s.btn}>
-          <Button onClick={() => buyProgram(props.data.service)}>
-            {props.data.btnContent.toUpperCase()}
+          <Button onClick={() => buyProgram(data.service)}>
+            {data.btnContent.toUpperCase()}
           </Button>
         </div>
       </div>

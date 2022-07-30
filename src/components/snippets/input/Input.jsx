@@ -2,9 +2,7 @@ import React from "react";
 import { useState } from "react";
 import s from "./Input.module.css";
 
-const Input = (props) => {
-  let data = props.data;
-
+const Input = ({data, register, errors}) => {
   let [isShowPassword, setShowPassword] = useState(false);
 
   let handleShowPassword = () => {
@@ -53,7 +51,7 @@ const Input = (props) => {
 
   return (
     <label
-      className={[s.wrapper, getError(data.name, props.errors) && s.error].join(
+      className={[s.wrapper, getError(data.name, errors) && s.error].join(
         " "
       )}
     >
@@ -63,7 +61,7 @@ const Input = (props) => {
           disabled={data.disabled}
           type={getType(data)}
           placeholder={data.placeholder}
-          {...props.register(data.name, getOptions(data.options))}
+          {...register(data.name, getOptions(data.options))}
         />
 
         {data.changedType ? (
@@ -84,7 +82,7 @@ const Input = (props) => {
           ""
         )}
       </div>
-      <span>{getError(data.name, props.errors) || "⁣"}</span>
+      <span>{getError(data.name, errors) || "⁣"}</span>
       <p>{data.subContent}</p>
     </label>
   );

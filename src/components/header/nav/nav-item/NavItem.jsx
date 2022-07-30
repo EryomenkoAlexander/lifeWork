@@ -5,7 +5,7 @@ import s from "./NavItem.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowList } from "../../../../redux/slices/header-slice";
 
-const NavItem = (props) => {
+const NavItem = ({data}) => {
   let dispatch = useDispatch();
 
   let location = useSelector(
@@ -14,26 +14,26 @@ const NavItem = (props) => {
 
   let elNavItem;
 
-  if (props.data.list) {
+  if (data.list) {
     elNavItem = (
       <div
         className={s.navItemList}
-        onClick={() => dispatch(setShowList(props.data.typeList))}
-        key={props.data.id}
+        onClick={() => dispatch(setShowList(data.typeList))}
+        key={data.id}
       >
-        <span className={props.data.typeList === "location" ? s.location : ""}>
-          {props.data.typeList === "location" ? location : props.data.title}
+        <span className={data.typeList === "location" ? s.location : ""}>
+          {data.typeList === "location" ? location : data.title}
         </span>
-        <img src={props.data.arrowImg} alt="arrow" />
-        <div className={props.data.isShowList ? s.active : s.inactive}>
-          <NavItemList list={props.data.list} typeList={props.data.typeList} />
+        <img src={data.arrowImg} alt="arrow" />
+        <div className={data.isShowList ? s.active : s.inactive}>
+          <NavItemList list={data.list} typeList={data.typeList} />
         </div>
       </div>
     );
   } else {
     elNavItem = (
-      <Link to={props.data.to} key={props.data.id}>
-        {props.data.title}
+      <Link to={data.to} key={data.id}>
+        {data.title}
       </Link>
     );
   }

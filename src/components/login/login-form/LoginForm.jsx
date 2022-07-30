@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import { setShowLoading } from "../../../redux/slices/loader-slice";
 import { setClose, setOpen } from "../../../redux/slices/myAlert-slice";
 
-const LoginForm = (props) => {
+const LoginForm = ({form}) => {
   const {
     register,
     handleSubmit,
@@ -84,12 +84,12 @@ const LoginForm = (props) => {
     <div className={s.loginForm}>
       <div className={s.wrapper}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          {props.form.inputs.map((i) => (
+          {form.inputs.map((i) => (
             <Input key={i.id} data={i} register={register} errors={errors} />
           ))}
-          <Button>{props.form.btnContent}</Button>
+          <Button>{form.btnContent}</Button>
         </form>
-        <Link to="/registration">{props.form.registration}</Link>
+        <Link to="/registration">{form.registration}</Link>
       </div>
     </div>
   );

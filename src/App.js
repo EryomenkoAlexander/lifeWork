@@ -11,7 +11,7 @@ import NotFound from "./components/not-found/NotFound";
 import Loader from "./components/snippets/loader/Loader";
 import MyAlert from "./components/snippets/alert/MyAlert";
 
-function App(props) {
+function App() {
   return (
     <div className="App">
       <Header />

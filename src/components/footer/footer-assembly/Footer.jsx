@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Nav from "../nav/Nav";
 import Contacts from "../contacts/Contacts";
 
-const Footer = (props) => {
+const Footer = () => {
   let footer = useSelector((state) => state.footer);
 
   return (

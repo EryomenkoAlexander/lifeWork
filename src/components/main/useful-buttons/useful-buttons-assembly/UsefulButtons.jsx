@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { setOpen } from "../../../../redux/slices/myAlert-slice";
 
-const UsefulButtons = (props) => {
+const UsefulButtons = () => {
   let navigate = useNavigate();
   let dispatch = useDispatch();
 

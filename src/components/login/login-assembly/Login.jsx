@@ -4,7 +4,7 @@ import s from "./Login.module.css";
 import { useSelector } from "react-redux";
 import Dignitys from "../dignitys/Dignitys";
 
-const Login = (props) => {
+const Login = () => {
   let login = useSelector((state) => state.login);
   return (
     <div className={s.login}>
