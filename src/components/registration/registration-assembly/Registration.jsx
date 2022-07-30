@@ -7,15 +7,13 @@ const Registration = () => {
     let registration = useSelector(state => state.registration)
     return (
       <div className={s.registration}>
-        <div className="container">
-          <h2>{registration.title}</h2>
-          <div className="wrapper">
-            <RegistrationForm
-              steps={registration.steps}
-              remark={registration.remark}
-              btnContent={registration.btnContent}
-            />
-          </div>
+        <h2>{registration.title}</h2>
+        <div className="wrapper">
+          <RegistrationForm
+            steps={registration.steps}
+            remark={registration.remark}
+            btnContent={registration.btnContent}
+          />
         </div>
       </div>
     );
