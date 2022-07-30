@@ -4,7 +4,7 @@ import s from './News.module.css'
 import Card from '../card/Card'
 import { useSelector } from "react-redux";
 
-const News = (props) => {
+const News = () => {
     let news = useSelector(state => state.news)
 
     let lastNews = news.items.slice(-3).reverse();

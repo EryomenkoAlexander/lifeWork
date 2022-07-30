@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import s from './Logo.module.css';
 import { useSelector } from "react-redux";
 
-const Logo = (props) => {
+const Logo = () => {
     let logo = useSelector(state => state.header.logo)
     return (
         <div className="logo">

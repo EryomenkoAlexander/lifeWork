@@ -3,7 +3,7 @@ import Card from '../card/Card'
 import s from './MainCards.module.css'
 import { useSelector } from "react-redux";
 
-const MainCards = (props) => {
+const MainCards = () => {
   let mainCards = useSelector(state => state.mainCards)
   
     return (

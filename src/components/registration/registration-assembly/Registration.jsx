@@ -3,7 +3,7 @@ import s from './Registration.module.css'
 import { useSelector } from 'react-redux'
 import RegistrationForm from "../registrationForm/registration-form-assembly/RegistrationForm";
 
-const Registration = (props) => {
+const Registration = () => {
     let registration = useSelector(state => state.registration)
     return (
       <div className={s.registration}>

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { setOpen } from '../../../../redux/slices/myAlert-slice'
 
-const Card = (props) => {
+const Card = ({data}) => {
   let isLoggedIn = useSelector(state => state.user.isLoggedIn)
   let navigate = useNavigate()
   let dispatch = useDispatch()
@@ -20,10 +20,10 @@ const Card = (props) => {
   return (
     <div className={s.card}>
       <div className={s.wrapper}>
-        <h2>{props.data.title.toUpperCase()}</h2>
-        <img src={props.data.imgSrc} alt="icon" />
+        <h2>{data.title.toUpperCase()}</h2>
+        <img src={data.imgSrc} alt="icon" />
         <div>
-          {props.data.contentBtn.map((i) => (
+          {data.contentBtn.map((i) => (
             <Button key={i.id} onClick={() => handleClick(i.to)}>{i.content.toUpperCase()}</Button>
           ))}
         </div>

@@ -22,7 +22,7 @@ import NotFound from "../../not-found/NotFound";
 import { NavLink } from 'react-router-dom'
 import Primary from '../primary/primary-assembly/Primary'
 
-const Cabinet = (props) => {
+const Cabinet = () => {
   let navigate = useNavigate();
 
   let isLoggedIn = useSelector((state) => state.user.isLoggedIn);

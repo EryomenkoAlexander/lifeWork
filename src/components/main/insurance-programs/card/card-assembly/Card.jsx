@@ -3,12 +3,12 @@ import s from "./Card.module.css";
 import Face from "../face/Face";
 import Info from "../info/Info";
 
-const Card = (props) => {
+const Card = ({data}) => {
   return (
     <div className={s.card}>
       <div className={s.wrapper}>
-        <Face data={props.data} />
-        <Info data={props.data} />
+        <Face data={data} />
+        <Info data={data} />
       </div>
     </div>
   );

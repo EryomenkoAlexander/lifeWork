@@ -16,8 +16,7 @@ import Step2 from "../steps/step-2/Step2";
 import Step3 from "../steps/step-3/Step3";
 import Step4 from "../steps/step-4/Step4";
 
-const RegistrationForm = (props) => {
-  let steps = props.steps;
+const RegistrationForm = ({steps, btnContent, remark}) => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
 
@@ -104,11 +103,11 @@ const RegistrationForm = (props) => {
           <div className={s.main}>
             <Step1 step_1={steps.step_1} register={register} errors={errors} />
             <Step2 step_2={steps.step_2} register={register} errors={errors} />
-            <Step3 step_3={steps.step_3} remark={props.remark} register={register} errors={errors} />
+            <Step3 step_3={steps.step_3} remark={remark} register={register} errors={errors} />
           </div>
           <Step4 step_4={steps.step_4} register={register} errors={errors} />
           
-          <Button>{props.btnContent}</Button>
+          <Button>{btnContent}</Button>
         </form>
       </div>
     </div>

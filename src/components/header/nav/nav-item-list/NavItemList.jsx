@@ -5,14 +5,14 @@ import { setLocation, setMessage } from "../../../../redux/slices/user-slice";
 import { setOpen } from "../../../../redux/slices/myAlert-slice";
 import { useNavigate } from "react-router";
 
-const NavItemList = (props) => {
+const NavItemList = ({list, typeList}) => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
   const handleClick = (data) => {
     if (isLoggedIn) {
-      if (props.typeList === "location") {
+      if (typeList === "location") {
         dispatch(setLocation(data));
         dispatch(
           setMessage({
@@ -34,7 +34,7 @@ const NavItemList = (props) => {
     }
   };
 
-  let elList = props.list.map((i) => (
+  let elList = list.map((i) => (
     <div className={s.item} onClick={() => handleClick(i.content)} key={i.id}>
       <img src="/imgs/header/line-list.svg" alt="line" />
       <span>{i.content}</span>

@@ -3,7 +3,7 @@ import Item from "../item/Item";
 import s from "./AboutUs.module.css";
 import { useSelector } from "react-redux";
 
-const AboutUs = (props) => {
+const AboutUs = () => {
   let aboutUs = useSelector((state) => state.aboutUs);
   return (
     <div className={s.aboutUs}>
