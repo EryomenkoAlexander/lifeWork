@@ -35,15 +35,3 @@
     left: -15px;
     top: 10%;
 }
-
-.step_1 > button {
-    margin: 20px 0 30px;
-}
-
-.step_3 {
-    position: relative;
-}
-
-.step_4 > button {
-    margin: 20px 0 0;
-}

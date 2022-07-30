@@ -19,7 +19,7 @@ const ProfileHeader = ({user}) => {
           {user.firstName} {user.lastName}
         </h3>
         <span>
-          {user.location !== "Город" ? "г " + user.location : ""}
+          {user.location !== "Город" ? "г. " + user.location : ""}
         </span>
       </div>
     </div>

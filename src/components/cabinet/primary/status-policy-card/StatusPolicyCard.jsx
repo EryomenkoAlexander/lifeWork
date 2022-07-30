@@ -1,24 +1,24 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router'
-import s from './StatusPolicyCard.module.css'
-import Button from '../../../snippets/button/Button'
+import React from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import s from "./StatusPolicyCard.module.css";
+import Button from "../../../snippets/button/Button";
 
 const StatusPolicyCard = () => {
-    let navigate = useNavigate()
-    let policies = useSelector(state => state.user.activeUser.policies)
-    let lastPolicy = policies.slice(-1)[0];
+  let navigate = useNavigate();
+  let policies = useSelector((state) => state.user.activeUser.policies);
+  let lastPolicy = policies.slice(-1)[0];
 
-    let getLeftDays = (dateEnd) => {
-      let d = new Date()
-      let curDays = d.getDate() + d.getMonth() * 30 + d.getFullYear() * 365;
-      let endDays = dateEnd.day + (dateEnd.month - 1) * 30 + dateEnd.year * 365;
-      return endDays - curDays;
-    }
+  let getLeftDays = (dateEnd) => {
+    let d = new Date();
+    let curDays = d.getDate() + d.getMonth() * 30 + d.getFullYear() * 365;
+    let endDays = dateEnd.day + (dateEnd.month - 1) * 30 + dateEnd.year * 365;
+    return endDays - curDays;
+  };
 
-    let goToPolicies = () => {
-      navigate('/cabinet/policies')
-    }
+  let goToPolicies = () => {
+    navigate("/cabinet/policies");
+  };
 
   return !policies.length ? (
     ""
@@ -58,7 +58,7 @@ const StatusPolicyCard = () => {
         </div>
       </div>
     </div>
-  ); 
-}
+  );
+};
 
-export default StatusPolicyCard
+export default StatusPolicyCard;
