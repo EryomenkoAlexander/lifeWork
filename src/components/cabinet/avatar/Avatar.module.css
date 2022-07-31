@@ -1,0 +1,63 @@
+.avatar {
+    position: relative;
+}
+
+.logo {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+}
+
+.wrapper > span > img {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    z-index: 100;
+    width: 25px;
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.wrapper > span > img:hover {
+    transition: all .2s;
+    transform: scale(1.2);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.url {
+    position: absolute;
+    top: 61%;
+    left: 75%;
+    background: #313C48;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-end;
+}
+
+.url > img {
+    width: 25px;
+    transition: all .2s;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+
+.url > img:hover {
+    transition: all .2s;
+    transform: scale(1.2);
+}
+
+.url div {
+    border-radius: 10px;
+}
+
+.url input {
+    border-radius: 10px;
+    background: #fff;
+    width: 300px;
+}

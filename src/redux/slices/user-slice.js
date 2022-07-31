@@ -15,6 +15,7 @@ let userSlice = createSlice({
         ...action.payload,
         location: "Город",
         bank: 0,
+        avatar: "",
         policies: [],
         messages: [],
       };
@@ -48,7 +49,7 @@ let userSlice = createSlice({
     },
     setPolicy: (state, action) => {
       state.activeUser.bank -= action.payload.price;
-      let d = new Date()
+      let d = new Date();
       state.activeUser.policies.push({
         ...action.payload,
         dateEnd: {
@@ -72,27 +73,30 @@ let userSlice = createSlice({
       state.activeUser.tel = action.payload;
     },
     setMessage: (state, action) => {
-      let d = new Date()
+      let d = new Date();
       let newMessage = {
         ...action.payload,
         id: Math.random(),
-        time: [d.getHours(), d.getMinutes()].join(':'),
-        date: [d.getDate(), d.getMonth() + 1, d.getFullYear()].join('.')
-      }
-      state.activeUser.messages.push(newMessage)
-    }, 
+        time: [d.getHours(), d.getMinutes()].join(":"),
+        date: [d.getDate(), d.getMonth() + 1, d.getFullYear()].join("."),
+      };
+      state.activeUser.messages.push(newMessage);
+    },
     removeMessage: (state, action) => {
       let message = action.payload;
-      let messages = state.activeUser.messages
+      let messages = state.activeUser.messages;
 
-      state.activeUser.messages = messages.filter(m => m.id !== message.id)
+      state.activeUser.messages = messages.filter((m) => m.id !== message.id);
     },
     removeAllMessages: (state, action) => {
       state.activeUser.messages = [];
     },
     addBank: (state, action) => {
       state.activeUser.bank += +action.payload;
-    }
+    },
+    setAvatar: (state, action) => {
+      state.activeUser.avatar = action.payload;
+    },
   },
 });
 
@@ -110,5 +114,6 @@ export const {
   removeMessage,
   removeAllMessages,
   addBank,
+  setAvatar,
 } = userSlice.actions;
 export default userSlice.reducer;

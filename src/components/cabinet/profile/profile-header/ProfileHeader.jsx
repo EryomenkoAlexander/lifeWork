@@ -1,30 +1,22 @@
 import React from 'react'
 import s from './ProfileHeader.module.css'
+import Avatar from '../../avatar/Avatar'
 
-const ProfileHeader = ({user}) => {
+const ProfileHeader = ({ user }) => {
   return (
     <div className={s.profileHeader}>
-    <div className={s.wrapper}>
-      <div className={s.avatar}>
-        {user.avatar ? (
-          <img src={user.avatar} alt="avatar" />
-        ) : (
-          <img src="/assets/imgs/user/default-avatar.svg" alt="avatar" />
-        )}
-        <span><img src="/assets/imgs/user/changeAvatar.svg" alt="changeAvatar" /></span>
-      </div>
+      <div className={s.wrapper}>
+        <Avatar />
 
-      <div className={s.info}>
-        <h3>
-          {user.firstName} {user.lastName}
-        </h3>
-        <span>
-          {user.location !== "Город" ? "г. " + user.location : ""}
-        </span>
+        <div className={s.info}>
+          <h3>
+            {user.firstName} {user.lastName}
+          </h3>
+          <span>{user.location !== "Город" ? "г. " + user.location : ""}</span>
+        </div>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
 export default ProfileHeader
