@@ -62,7 +62,7 @@ const AskQuestionForm = ({inputs}) => {
           </div>
           <Button>
             Отправить
-            <img src="/imgs/cabinet/askQuestion/send.png" alt="send" />
+            <img src="/assets/imgs/cabinet/askQuestion/send.png" alt="send" />
           </Button>
         </form>
       </div>

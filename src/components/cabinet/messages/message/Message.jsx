@@ -31,7 +31,7 @@ const Message = ({data}) => {
           </div>
         </div>
 
-        <img src="/imgs/cabinet/messages/close.png" alt="close" onClick={() => deleteMessage(data)}/>
+        <img src="/assets/imgs/cabinet/messages/close.png" alt="close" onClick={() => deleteMessage(data)}/>
       </div>
     </div>
   );

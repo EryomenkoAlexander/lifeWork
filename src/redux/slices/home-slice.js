@@ -6,7 +6,7 @@ let initialState = {
       {
         id: Math.random(),
         title: "Защита",
-        imgSrc: "/imgs/mainCards/shield.svg",
+        imgSrc: "/assets/imgs/mainCards/shield.svg",
         contentBtn: [
           {
             id: Math.random(),
@@ -23,7 +23,7 @@ let initialState = {
       {
         id: Math.random(),
         title: "Твоё будущее",
-        imgSrc: "/imgs/mainCards/time.svg",
+        imgSrc: "/assets/imgs/mainCards/time.svg",
         contentBtn: [
           {
             id: Math.random(),
@@ -35,7 +35,7 @@ let initialState = {
       {
         id: Math.random(),
         title: "Бизнес предложения",
-        imgSrc: "/imgs/mainCards/bag.svg",
+        imgSrc: "/assets/imgs/mainCards/bag.svg",
         contentBtn: [
           {
             id: Math.random(),
@@ -53,7 +53,7 @@ let initialState = {
         id: Math.random(),
         typeService: "Программа",
         service: "Здоровье",
-        imgSrc: "/imgs/insurancePrograms/health.svg",
+        imgSrc: "/assets/imgs/insurancePrograms/health.svg",
         btnContent: "Купить",
         infoProgram: [
           {
@@ -79,9 +79,9 @@ let initialState = {
       {
         id: Math.random(),
         typeService: "Онлайн",
-        iconSrc: "/imgs/insurancePrograms/info_outline.svg",
+        iconSrc: "/assets/imgs/insurancePrograms/info_outline.svg",
         service: "ДМС",
-        imgSrc: "/imgs/insurancePrograms/caduceus-symbol.svg",
+        imgSrc: "/assets/imgs/insurancePrograms/caduceus-symbol.svg",
         btnContent: "Купить",
         infoProgram: [
           {
@@ -93,7 +93,7 @@ let initialState = {
           {
             id: Math.random(),
             beforeContent: "до",
-            imgSrc: "/imgs/insurancePrograms/infinity.svg",
+            imgSrc: "/assets/imgs/insurancePrograms/infinity.svg",
             content: "чел.",
             subContent: "количество застрахованных по одному договору",
           },
@@ -113,25 +113,25 @@ let initialState = {
       {
         id: Math.random(),
         content: "страхование жизни на случай смерти",
-        imgSrc: "/imgs/typesInsurance/angel.svg",
+        imgSrc: "/assets/imgs/typesInsurance/angel.svg",
         sideImg: "right",
       },
       {
         id: Math.random(),
         content: "страхование жизни с условием периодических страховых выплат",
-        imgSrc: "/imgs/typesInsurance/coin.svg",
+        imgSrc: "/assets/imgs/typesInsurance/coin.svg",
         sideImg: "left",
       },
       {
         id: Math.random(),
         content: "страхование от несчастных случаев и болезней",
-        imgSrc: "/imgs/typesInsurance/accident.svg",
+        imgSrc: "/assets/imgs/typesInsurance/accident.svg",
         sideImg: "right",
       },
       {
         id: Math.random(),
         content: "медицинское страхование",
-        imgSrc: "/imgs/typesInsurance/healthcare.svg",
+        imgSrc: "/assets/imgs/typesInsurance/healthcare.svg",
         sideImg: "left",
       },
     ],
@@ -141,20 +141,20 @@ let initialState = {
     items: [
       {
         id: Math.random(),
-        imgSrc: "/imgs/aboutUs/arrow_right.svg",
+        imgSrc: "/assets/imgs/aboutUs/arrow_right.svg",
         content: "380",
         afterContent: "мил. руб.",
         subContent: "капитала",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/aboutUs/wave.svg",
+        imgSrc: "/assets/imgs/aboutUs/wave.svg",
         content: "78",
         subContent: "региональных предстравительств",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/aboutUs/arrow_right.svg",
+        imgSrc: "/assets/imgs/aboutUs/arrow_right.svg",
         content: "20",
         subContent: "лет на рынке страховых услуг",
       },
@@ -167,27 +167,27 @@ let initialState = {
     companies: [
       {
         id: Math.random(),
-        imgSrc: "/imgs/aboutUs/companies/с1.svg",
+        imgSrc: "/assets/imgs/aboutUs/companies/с1.svg",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/aboutUs/companies/с2.svg",
+        imgSrc: "/assets/imgs/aboutUs/companies/с2.svg",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/aboutUs/companies/с3.svg",
+        imgSrc: "/assets/imgs/aboutUs/companies/с3.svg",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/aboutUs/companies/с4.svg",
+        imgSrc: "/assets/imgs/aboutUs/companies/с4.svg",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/aboutUs/companies/с5.svg",
+        imgSrc: "/assets/imgs/aboutUs/companies/с5.svg",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/aboutUs/companies/с6.svg",
+        imgSrc: "/assets/imgs/aboutUs/companies/с6.svg",
       },
     ],
   },

@@ -26,7 +26,7 @@ const Menu = () => {
     <div className={s.menu}>
       <div className={s.wrapper}>
         <div className={s.logout} onClick={() => logout()}>
-          <img src="/imgs/cabinet/menu/logout.svg" alt="human" />
+          <img src="/assets/imgs/cabinet/menu/logout.svg" alt="human" />
           <span>Выход</span>
         </div>
         <Items />

@@ -84,7 +84,7 @@ const NewsForm = () => {
                     {i.name === "hashtag" && (
                       <img
                         className={s.btnHashtag}
-                        src="/imgs/news/plus.png"
+                        src="/assets/imgs/news/plus.png"
                         alt="plus"
                         onClick={() => addHashtag(getValues("hashtag"))}
                       />
@@ -99,7 +99,7 @@ const NewsForm = () => {
             <Hashtags hashtags={hashtags} removeHashtag={removeHashtag} />
             <Button>
               Создать
-              <img src="/imgs/news/createNews.png" alt="news" />
+              <img src="/assets/imgs/news/createNews.png" alt="news" />
             </Button>
           </div>
         </form>

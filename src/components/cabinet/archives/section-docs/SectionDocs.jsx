@@ -15,7 +15,7 @@ const SectionDocs = ({data}) => {
               rel="noopener noreferrer"
               key={i.id}
             >
-              <img src="/imgs/snippets/docs.png" alt="document" />
+              <img src="/assets/imgs/snippets/docs.png" alt="document" />
               {i.text}
             </Docs>
           ))}

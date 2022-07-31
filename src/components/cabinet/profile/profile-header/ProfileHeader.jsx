@@ -9,9 +9,9 @@ const ProfileHeader = ({user}) => {
         {user.avatar ? (
           <img src={user.avatar} alt="avatar" />
         ) : (
-          <img src="/imgs/user/default-avatar.svg" alt="avatar" />
+          <img src="/assets/imgs/user/default-avatar.svg" alt="avatar" />
         )}
-        <span><img src="/imgs/user/changeAvatar.svg" alt="changeAvatar" /></span>
+        <span><img src="/assets/imgs/user/changeAvatar.svg" alt="changeAvatar" /></span>
       </div>
 
       <div className={s.info}>

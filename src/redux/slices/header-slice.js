@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 let initialState = {
     logo: {
       id: Math.random(),
-      logoImg: "/imgs/header/logo.svg",
+      logoImg: "/assets/imgs/header/logo.svg",
       to: "/",
     },
   
@@ -23,7 +23,7 @@ let initialState = {
         typeList: 'help',
         title: "Помощь",
         isShowList: false,
-        arrowImg: "/imgs/header/arrow-bottom.svg",
+        arrowImg: "/assets/imgs/header/arrow-bottom.svg",
         list: [
           {
             id: Math.random(),
@@ -47,7 +47,7 @@ let initialState = {
         id: Math.random(),
         typeList: 'location',
         isShowList: false,
-        arrowImg: "/imgs/header/arrow-bottom.svg",
+        arrowImg: "/assets/imgs/header/arrow-bottom.svg",
         list: [
           {
             id: Math.random(),
@@ -104,7 +104,7 @@ let initialState = {
       id: Math.random(),
       title: "Личный кабинет",
       to: "cabinet",
-      cabinetImg: "/imgs/header/cabinet.svg",
+      cabinetImg: "/assets/imgs/header/cabinet.svg",
     },
   };
 

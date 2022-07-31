@@ -64,7 +64,7 @@ const PaymentForm = ({payment}) => {
 
           <Button>
             Пополнить
-            <img src="/imgs/cabinet/payment/money.png" alt="money" />
+            <img src="/assets/imgs/cabinet/payment/money.png" alt="money" />
           </Button>
         </form>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Card.module.css";
 
 const Card = ({ data }) => {
-  let preview = data.preview.length ? data.preview : `/imgs/news/plugNews.png`;
+  let preview = data.preview.length ? data.preview : `/assets/imgs/news/plugNews.png`;
 
   return (
     <div className={s.card}>

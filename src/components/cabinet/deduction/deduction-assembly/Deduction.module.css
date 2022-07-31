@@ -22,7 +22,7 @@
 .items > div > ul {
     margin-top: 30px;
     list-style: none;
-    list-style-image: url('/imgs/cabinet/deduction/mark.png');
+    list-style-image: url('/assets/imgs/cabinet/deduction/mark.png');
 }
 
 .items > div > ul > li {

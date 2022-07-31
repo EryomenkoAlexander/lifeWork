@@ -40,19 +40,19 @@ let initialState = {
     socialNetwork: [
       {
         id: Math.random(),
-        imgSrc: "/imgs/footer/vk.svg",
+        imgSrc: "/assets/imgs/footer/vk.svg",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/footer/telegram.svg",
+        imgSrc: "/assets/imgs/footer/telegram.svg",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/footer/facebook.svg",
+        imgSrc: "/assets/imgs/footer/facebook.svg",
       },
       {
         id: Math.random(),
-        imgSrc: "/imgs/footer/instagram.svg",
+        imgSrc: "/assets/imgs/footer/instagram.svg",
       },
     ],
     subContent: "© 1998 – 2021 ООО СК 'ДЕЛО ЖИЗНИ'. Все права защищены. Полное или частичное копирование любых материалов сайта запрещено. ООО СК «ДЕЛО ЖИЗНИ» осуществляет свою деятельность на основании лицензий ЦБ РФ:СЖ № 3870 от 24.03.2017СЛ № 3870 от 24.03.2017 Органом, осуществляющим полномочия по контролю и надзору за ООО СК «ДЕЛО ЖИЗНИ» является Банк России. Адрес официального сайта Банк России - www.cbr.ru.",

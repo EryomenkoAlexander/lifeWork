@@ -62,7 +62,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('/imgs/cabinet/primary/ellipse.svg') no-repeat center / cover;
+    background: url('/assets/imgs/cabinet/primary/ellipse.svg') no-repeat center / cover;
     width: 150px;
     height: 150px;
     margin: 30px auto;

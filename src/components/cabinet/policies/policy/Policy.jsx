@@ -22,7 +22,7 @@ const Policy = ({data}) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/imgs/cabinet/policies/info.png" alt="docs" />
+              <img src="/assets/imgs/cabinet/policies/info.png" alt="docs" />
             </a>
           </div>
           <p>{data.shortInfo}</p>
@@ -38,7 +38,7 @@ const Policy = ({data}) => {
           <img
             onClick={goToInsuredEvent}
             className={s.problem}
-            src="/imgs/cabinet/policies/energy.svg"
+            src="/assets/imgs/cabinet/policies/energy.svg"
             alt="problem"
           />
         </div>
