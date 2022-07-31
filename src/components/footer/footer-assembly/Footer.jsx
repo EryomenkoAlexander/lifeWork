@@ -5,7 +5,7 @@ import Nav from "../nav/Nav";
 import Contacts from "../contacts/Contacts";
 
 const Footer = () => {
-  let footer = useSelector((state) => state.footer);
+  let footer = useSelector((state) => state.layout.footer);
 
   return (
     <div className={s.footer}>
