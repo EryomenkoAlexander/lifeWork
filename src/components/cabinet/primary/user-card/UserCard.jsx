@@ -1,6 +1,7 @@
 import React from 'react'
 import s from './UserCard.module.css'
 import { useSelector } from 'react-redux'
+import Avatar from '../../avatar/Avatar'
 
 const UserCard = () => {
     let user = useSelector(state => state.user.activeUser)
@@ -12,21 +13,16 @@ const UserCard = () => {
           <h4>Здравствуйте,</h4>
           <span>{user.firstName}</span>
         </div>
-
         <div className={s.avatar}>
-          {user.avatar ? (
-            <img src={user.avatar} alt="avatar" />
-          ) : (
-            <img src="/assets/imgs/user/default-avatar.svg" alt="avatar" />
-          )}
-          <span>
-            <img src="/assets/imgs/user/changeAvatar.svg" alt="changeAvatar" />
-          </span>
+          <Avatar />
         </div>
 
         <div className={s.connect}>
           <div>
-            <img src="/assets/imgs/cabinet/primary/location.svg" alt="location" />
+            <img
+              src="/assets/imgs/cabinet/primary/location.svg"
+              alt="location"
+            />
             <span>{user.location}</span>
           </div>
 
