@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import NavItemList from "../nav-item-list/NavItemList";
 import s from "./NavItem.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setShowList } from "../../../../redux/slices/header-slice";
+import { setShowList } from '../../../../redux/slices/layout-slice';
 
 const NavItem = ({data}) => {
   let dispatch = useDispatch();

@@ -4,7 +4,7 @@ import s from './Nav.module.css'
 import { useSelector } from "react-redux";
 
 const Nav = () => {
-  let nav = useSelector(state => state.header.nav)
+  let nav = useSelector(state => state.layout.header.nav)
 
     let elNav = [];
     for (let key in nav) {

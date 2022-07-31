@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Cabinet = () => {
-  let cabinet = useSelector(state => state.header.cabinet)
+  let cabinet = useSelector(state => state.layout.header.cabinet)
 
     return (
       <NavLink to={cabinet.to} className={s.cabinet}>

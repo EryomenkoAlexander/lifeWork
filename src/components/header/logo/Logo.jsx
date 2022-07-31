@@ -4,7 +4,7 @@ import s from './Logo.module.css';
 import { useSelector } from "react-redux";
 
 const Logo = () => {
-    let logo = useSelector(state => state.header.logo)
+    let logo = useSelector(state => state.layout.header.logo)
     return (
         <div className="logo">
             <NavLink to={logo.to}>
