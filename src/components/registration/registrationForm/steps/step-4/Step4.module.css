@@ -26,11 +26,11 @@
 }
 
 .wrapper > label > input::after {
-    content: url('/imgs/snippets/checked-false.svg');
+    content: url('/assets/imgs/snippets/checked-false.svg');
 }
 
 .wrapper > label > input:checked::after {
-    content: url('/imgs/snippets/checked-true.svg');
+    content: url('/assets/imgs/snippets/checked-true.svg');
     background: #fff;
 }
 

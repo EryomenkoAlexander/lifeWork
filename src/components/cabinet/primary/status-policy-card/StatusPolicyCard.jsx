@@ -26,7 +26,7 @@ const StatusPolicyCard = () => {
     <div className={s.statusPolicyCard}>
       <div className={s.wrapper}>
         <div className={s.title}>
-          <img src="/imgs/cabinet/primary/check.svg" alt="check" />
+          <img src="/assets/imgs/cabinet/primary/check.svg" alt="check" />
           <h4>Статус моего полиса</h4>
         </div>
 

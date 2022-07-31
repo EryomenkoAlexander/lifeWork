@@ -36,7 +36,7 @@ const NavItemList = ({list, typeList}) => {
 
   let elList = list.map((i) => (
     <div className={s.item} onClick={() => handleClick(i.content)} key={i.id}>
-      <img src="/imgs/header/line-list.svg" alt="line" />
+      <img src="/assets/imgs/header/line-list.svg" alt="line" />
       <span>{i.content}</span>
     </div>
   ));

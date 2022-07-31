@@ -17,7 +17,7 @@ const RecommendationCard = () => {
     <div className={s.recommendationCard}>
       <div className={s.wrapper}>
         <div className={s.title}>
-          <img src="/imgs/cabinet/primary/plus.svg" alt="check" />
+          <img src="/assets/imgs/cabinet/primary/plus.svg" alt="check" />
           <h4>Рекомендации</h4>
         </div>
 
@@ -33,7 +33,7 @@ const RecommendationCard = () => {
 
                   <div>
                     <img
-                      src="/imgs/cabinet/primary/arrow-right.svg"
+                      src="/assets/imgs/cabinet/primary/arrow-right.svg"
                       alt="arrow"
                     />
                   </div>

@@ -17,21 +17,21 @@ const UserCard = () => {
           {user.avatar ? (
             <img src={user.avatar} alt="avatar" />
           ) : (
-            <img src="/imgs/user/default-avatar.svg" alt="avatar" />
+            <img src="/assets/imgs/user/default-avatar.svg" alt="avatar" />
           )}
           <span>
-            <img src="/imgs/user/changeAvatar.svg" alt="changeAvatar" />
+            <img src="/assets/imgs/user/changeAvatar.svg" alt="changeAvatar" />
           </span>
         </div>
 
         <div className={s.connect}>
           <div>
-            <img src="/imgs/cabinet/primary/location.svg" alt="location" />
+            <img src="/assets/imgs/cabinet/primary/location.svg" alt="location" />
             <span>{user.location}</span>
           </div>
 
           <div>
-            <img src="/imgs/cabinet/primary/tel.svg" alt="location" />
+            <img src="/assets/imgs/cabinet/primary/tel.svg" alt="location" />
             <span>{user.tel}</span>
           </div>
         </div>

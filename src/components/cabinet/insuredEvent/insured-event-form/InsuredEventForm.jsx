@@ -62,7 +62,7 @@ const InsuredEventForm = ({ inputs }) => {
 
           <Button>
             Отправить
-            <img src="/imgs/cabinet/insuredEvent/send.png" alt="send" />
+            <img src="/assets/imgs/cabinet/insuredEvent/send.png" alt="send" />
           </Button>
         </form>
       </div>

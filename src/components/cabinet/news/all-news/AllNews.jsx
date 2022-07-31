@@ -19,7 +19,7 @@ const AllNews = ({items}) => {
       {items.length > 0 && (
         <Button>
           Смотреть все
-          <img src="/imgs/snippets/arrow-right.png" alt="arrow-right" />
+          <img src="/assets/imgs/snippets/arrow-right.png" alt="arrow-right" />
         </Button>
       )}
     </div>

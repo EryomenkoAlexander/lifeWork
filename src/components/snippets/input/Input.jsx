@@ -67,13 +67,13 @@ const Input = ({data, register, errors}) => {
         {data.changedType ? (
           isShowPassword ? (
             <img
-              src="/imgs/snippets/show-psw.svg"
+              src="/assets/imgs/snippets/show-psw.svg"
               alt="show-psw"
               onClick={handleShowPassword}
             />
           ) : (
             <img
-              src="/imgs/snippets/hide-psw.svg"
+              src="/assets/imgs/snippets/hide-psw.svg"
               alt="hide-psw"
               onClick={handleShowPassword}
             />

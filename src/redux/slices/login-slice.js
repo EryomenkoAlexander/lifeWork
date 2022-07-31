@@ -36,31 +36,31 @@ let initialState = {
     },
     dignitys: {
         title: 'причин зарегист рироваться',
-        imgSrc: '/imgs/login/five.svg',
+        imgSrc: '/assets/imgs/login/five.svg',
         items: [
             {
                 id: Math.random(),
-                imgSrc: '/imgs/login/clock.svg',
+                imgSrc: '/assets/imgs/login/clock.svg',
                 content: 'быстрые и удобные правки '
             },
             {
                 id: Math.random(),
-                imgSrc: '/imgs/login/shield.svg',
+                imgSrc: '/assets/imgs/login/shield.svg',
                 content: 'надежность'
             },
             {
                 id: Math.random(),
-                imgSrc: '/imgs/login/hand.svg',
+                imgSrc: '/assets/imgs/login/hand.svg',
                 content: 'приватность'
             },
             {
                 id: Math.random(),
-                imgSrc: '/imgs/login/file.svg',
+                imgSrc: '/assets/imgs/login/file.svg',
                 content: 'все документы в одном месте'
             },
             {
                 id: Math.random(),
-                imgSrc: '/imgs/login/imprint.svg',
+                imgSrc: '/assets/imgs/login/imprint.svg',
                 content: 'индивидуaльный подход'
             }
         ]

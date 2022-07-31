@@ -8,7 +8,7 @@ const NotFound = () => {
   
   return (
     <div className={s.notFound}>
-      <img src="/imgs/notFound/error-404.png" alt="404" />
+      <img src="/assets/imgs/notFound/error-404.png" alt="404" />
       <Button onClick={() => navigate('/')}>Домой</Button>
     </div>
   );

@@ -27,7 +27,7 @@ const News = () => {
               <div className={s.btn}>
                 <Button>
                   Смотреть все
-                  <img src="/imgs/snippets/arrow-right.png" alt="arrow-right" />
+                  <img src="/assets/imgs/snippets/arrow-right.png" alt="arrow-right" />
                 </Button>
               </div>
             </>

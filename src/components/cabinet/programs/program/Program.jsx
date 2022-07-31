@@ -66,7 +66,7 @@ const Program = ({ data }) => {
       {!checkRepeatProgram(data) && (
         <img
           className={s.bought}
-          src="/imgs/cabinet/programs/check.png"
+          src="/assets/imgs/cabinet/programs/check.png"
           alt="docs"
         />
       )}
@@ -87,7 +87,7 @@ const Program = ({ data }) => {
       >
         <img
           className={s.download}
-          src="/imgs/cabinet/programs/download.png"
+          src="/assets/imgs/cabinet/programs/download.png"
           alt="docs"
         />
       </a>
