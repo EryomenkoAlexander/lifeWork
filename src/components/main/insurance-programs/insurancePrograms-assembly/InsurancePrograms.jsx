@@ -3,7 +3,7 @@ import s from "./InsurancePrograms.module.css";
 import { useSelector } from "react-redux";
 import Card from "../card/card-assembly/Card";
 
-const insurancePrograms = () => {
+const InsurancePrograms = () => {
   let insurancePrograms = useSelector((state) => state.home.insurancePrograms);
 
   return (
@@ -18,4 +18,4 @@ const insurancePrograms = () => {
   );
 };
 
-export default insurancePrograms;
+export default InsurancePrograms;

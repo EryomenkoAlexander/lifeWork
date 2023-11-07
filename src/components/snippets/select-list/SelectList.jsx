@@ -5,13 +5,13 @@ import { useEffect } from "react";
 const SelectList = ({ title, list, value, setValue }) => {
   useEffect(() => {
     list && list.length && setValue(list[0]);
-  }, []);
+  }, [list, setValue]);
 
   return (
     <FormControl fullWidth>
       <InputLabel>{title}</InputLabel>
       <Select
-        disabled={list && list.length ? false : true}
+        disabled={!(list && list.length)}
         value={value}
         label={title}
         onChange={(e) => setValue(e.target.value)}

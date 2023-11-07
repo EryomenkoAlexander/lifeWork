@@ -7,7 +7,7 @@
 
 .dignitysTitle {
     height: 110px;
-    background: url(/assets/imgs/login/five.svg) no-repeat center;
+    background: url(../../../../public/assets/imgs/login/five.svg) no-repeat center;
     display: flex;
     justify-content: center;
     align-items: center;

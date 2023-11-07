@@ -16,12 +16,12 @@
 
 .cabinet:hover .img {
     transition: all 0.2s;
-    background: url(/assets/imgs/header/cabinet-active.svg) no-repeat center / cover;
+    background: url(../../../../public/assets/imgs/header/cabinet-active.svg) no-repeat center / cover;
 }
 
 .img {
     transition: all 0.2s;
     width: 34px;
     height: 34px;
-    background: url(/assets/imgs/header/cabinet.svg) no-repeat center / cover;
+    background: url(../../../../public/assets/imgs/header/cabinet.svg) no-repeat center / cover;
 }

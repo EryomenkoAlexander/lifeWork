@@ -43,7 +43,7 @@
 
 .hashtag:hover::after {
     content: '';
-    background: url(/assets/imgs/news/cross.png) no-repeat center / 50%;
+    background: url(../../../../../public/assets/imgs/news/cross.png) no-repeat center / 50%;
     width: 20px;
     height: 20px;
     position: absolute;
